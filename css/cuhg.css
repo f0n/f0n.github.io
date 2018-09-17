@@ -19,3 +19,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+p {
+    padding-left: 50px;
+    padding-bottom: 10px;
+
+}
