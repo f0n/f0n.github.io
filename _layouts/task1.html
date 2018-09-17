@@ -58,7 +58,7 @@ text-shadow: 1px 1px #0066ff;
 				<li><a href="/xcbohl">XC Bohl 2018</a></li>
 	    		</ul>
 </nav>
-
+<h3>This is just a sample. XC Bohl 2018 is Oct 6, 2018 to Oct 8, 2018. 
 <div class='ALL'>
 <div class='container-fluid'>
 <div class='row-fluid'>
@@ -292,7 +292,7 @@ time.start = Math.min(time.start, geometry.getFirstCoordinate()[2]);
 time.stop = Math.max(time.stop, geometry.getLastCoordinate()[2]);
 time.duration = time.stop - time.start;
 });
-var wharton = [-96.1543889, 29.2542778]; // caution partner, read on...
+var wharton = [-96.1543889, 28.8942778]; // caution partner, read on...
 // since we are using OSM, we have to transform the coordinates...
 var whartonMercator = ol.proj.fromLonLat(wharton);
 var map = new ol.Map({
@@ -315,7 +315,7 @@ collapsible: false
 }),
 view: new ol.View({
 center: whartonMercator,
-zoom: 12
+zoom: 10
 })
 });
 var point = null;
