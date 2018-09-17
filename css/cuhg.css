@@ -20,7 +20,7 @@ a:hover {
     text-decoration: underline;
 }
 
-p {
+p, h3 {
     padding-left: 50px;
     padding-bottom: 10px;
 
