@@ -52,3 +52,11 @@ ul.posts li {
     width: 40%;
 }
 
+.xc {
+    display: block;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
