@@ -2,7 +2,6 @@ body {
     margin: 60px auto;
     width: 70%;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    display: flex;
 }
 nav ul, footer ul {
     padding: 0px;
