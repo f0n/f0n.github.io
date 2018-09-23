@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>2018 SCFR Task 6</title>
+<title>2018 SCFR Task 2</title>
 <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
@@ -56,7 +56,7 @@ text-shadow: 1px 1px #0066ff;
 <div class='udiv_legende' id='legende_1'>
 <img id='cuhg_logo' src='https://www.cuhanggliding.com/wp-content/uploads/2017/11/shirt-design_21-1024x947.png'>
 <div id='Task'>
-<h2 class="collapsible">2018 SCFR Task 6</h2>
+<h2 class="collapsible">2018 SCFR Task 2</h2>
 <table>
 <thead>
 <tr>
@@ -77,7 +77,7 @@ text-shadow: 1px 1px #0066ff;
 <td>FRANCI</td>
 <td>0.00</td>
 <td>400</td>
-<td>13:45</td>
+<td>13:40</td>
 <td>20:00</td>
 <td>32.88233, -111.85378</td>
 <td>-</td>
@@ -88,7 +88,7 @@ text-shadow: 1px 1px #0066ff;
 <td>FRANCI</td>
 <td>0.00</td>
 <td>5000</td>
-<td>13:45</td>
+<td>13:40</td>
 <td>20:00</td>
 <td>32.88233, -111.85378</td>
 <td>-</td>
@@ -96,47 +96,47 @@ text-shadow: 1px 1px #0066ff;
 </tr>
 <tr>
 <td>3</td>
-<td>MARICO</td>
-<td>26.53</td>
-<td>1000</td>
-<td>13:45</td>
+<td>SUNLAN</td>
+<td>28.59</td>
+<td>3000</td>
+<td>13:40</td>
 <td>20:00</td>
-<td>33.05708, -112.04765</td>
-<td>317</td>
-<td>357</td>
+<td>32.67540, -111.67192</td>
+<td>143</td>
+<td>474</td>
 </tr>
 <tr>
 <td>4</td>
-<td>I884</td>
-<td>25.98</td>
-<td>7000</td>
-<td>13:45</td>
+<td>NEWPK</td>
+<td>25.83</td>
+<td>1000</td>
+<td>13:40</td>
 <td>20:00</td>
-<td>32.83460, -112.13313</td>
-<td>198</td>
-<td>561</td>
+<td>32.71867, -111.40058</td>
+<td>79</td>
+<td>1374</td>
 </tr>
 <tr>
 <td>5</td>
-<td>MOBILE</td>
-<td>27.74</td>
-<td>3000</td>
-<td>13:45</td>
+<td>ARIZON</td>
+<td>33.81</td>
+<td>5000</td>
+<td>13:40</td>
 <td>20:00</td>
-<td>33.05557, -112.27163</td>
-<td>332</td>
-<td>402</td>
+<td>32.74167, -111.76122</td>
+<td>274</td>
+<td>461</td>
 </tr>
 <tr>
 <td>6</td>
-<td>ESTREL</td>
-<td>10.76</td>
-<td>1500</td>
-<td>13:45</td>
+<td>FRANCI</td>
+<td>17.87</td>
+<td>15000</td>
+<td>13:40</td>
 <td>20:00</td>
-<td>33.08578, -112.16180</td>
-<td>72</td>
-<td>386</td>
+<td>32.88233, -111.85387</td>
+<td>331</td>
+<td>408</td>
 </tr>
 </tbody>
 </table>
@@ -158,17 +158,17 @@ text-shadow: 1px 1px #0066ff;
 <script>
 var FRANCI = new ol.geom.Circle(ol.proj.transform([-111.85378, 32.88233], 'EPSG:4326', 'EPSG:3857'), 400);
 var FRANCI1 = new ol.geom.Circle(ol.proj.transform([-111.85378, 32.88233], 'EPSG:4326', 'EPSG:3857'), 5000);
-var MARICO = new ol.geom.Circle(ol.proj.transform([-112.04765, 33.05708], 'EPSG:4326', 'EPSG:3857'), 1000);
-var I884 = new ol.geom.Circle(ol.proj.transform([-112.13313, 32.8346], 'EPSG:4326', 'EPSG:3857'), 7000);
-var MOBILE = new ol.geom.Circle(ol.proj.transform([-112.27163, 33.05557], 'EPSG:4326', 'EPSG:3857'), 3000);
-var ESTREL = new ol.geom.Circle(ol.proj.transform([-112.1618, 33.08578], 'EPSG:4326', 'EPSG:3857'), 1500);
+var SUNLAN = new ol.geom.Circle(ol.proj.transform([-111.67192, 32.6754], 'EPSG:4326', 'EPSG:3857'), 3000);
+var NEWPK = new ol.geom.Circle(ol.proj.transform([-111.40058, 32.71867], 'EPSG:4326', 'EPSG:3857'), 1000);
+var ARIZON = new ol.geom.Circle(ol.proj.transform([-111.76122, 32.74167], 'EPSG:4326', 'EPSG:3857'), 5000);
+var FRANCI2 = new ol.geom.Circle(ol.proj.transform([-111.85387, 32.88233], 'EPSG:4326', 'EPSG:3857'), 15000);
 var points = [
 [-111.85378, 32.88233],
 [-111.85378, 32.88233],
-[-112.04765, 33.05708],
-[-112.13313, 32.8346],
-[-112.27163, 33.05557],
-[-112.1618, 33.08578],
+[-111.67192, 32.6754],
+[-111.40058, 32.71867],
+[-111.76122, 32.74167],
+[-111.85387, 32.88233],
 ];
 for (var i = 0; i < points.length; i++) {
     points[i] = ol.proj.transform(points[i], 'EPSG:4326', 'EPSG:3857');
@@ -187,17 +187,17 @@ var vectorLineLayer = new ol.layer.Vector({
     });
 var FRANCIFeature = new ol.Feature({geometry: FRANCI, label: 'FRANCI'});
 var FRANCI1Feature = new ol.Feature({geometry: FRANCI1, label: 'FRANCI'});
-var MARICOFeature = new ol.Feature({geometry: MARICO, label: 'MARICO'});
-var I884Feature = new ol.Feature({geometry: I884, label: 'I884'});
-var MOBILEFeature = new ol.Feature({geometry: MOBILE, label: 'MOBILE'});
-var ESTRELFeature = new ol.Feature({geometry: ESTREL, label: 'ESTREL'});
+var SUNLANFeature = new ol.Feature({geometry: SUNLAN, label: 'SUNLAN'});
+var NEWPKFeature = new ol.Feature({geometry: NEWPK, label: 'NEWPK'});
+var ARIZONFeature = new ol.Feature({geometry: ARIZON, label: 'ARIZON'});
+var FRANCI2Feature = new ol.Feature({geometry: FRANCI2, label: 'FRANCI'});
 var vectorSource = new ol.source.Vector({ projection: 'EPSG:4326', features: [
 FRANCIFeature,
 FRANCI1Feature,
-MARICOFeature,
-I884Feature,
-MOBILEFeature,
-ESTRELFeature,
+SUNLANFeature,
+NEWPKFeature,
+ARIZONFeature,
+FRANCI2Feature,
 ]});
 var style = new ol.style.Style({
      fill: new ol.style.Fill({
@@ -277,7 +277,7 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-'robin6.igc',
+'robin2.igc',
 //'mick.igc',
 //'Jeff_Colombia.igc',
 //'data/igc/Tom-Payne.igc',
@@ -310,12 +310,7 @@ time.start = Math.min(time.start, geometry.getFirstCoordinate()[2]);
 time.stop = Math.max(time.stop, geometry.getLastCoordinate()[2]);
 time.duration = time.stop - time.start;
 });
-
-
-
-
-
-var wharton = [-112.0536283333, 32.9662816667]; // caution partner, read on...
+var wharton = [-111.85378, 32.88233]; // caution partner, read on...
 // since we are using OSM, we have to transform the coordinates...
 var whartonMercator = ol.proj.fromLonLat(wharton);
 var map = new ol.Map({
