@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>GSSK_2018_Task1</title>
+<meta charset="ISO-8859-1">
 <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
@@ -55,8 +56,7 @@ text-shadow: 1px 1px #0066ff;
                     <li><a href='/'>Home</a></li>
                     <li><a href='/about'>About</a></li>
                     <li><a href='/blog'>Blog</a></li>
-                    <li><a href='/xcbohl'>XC Bohl 2018</a></li>
-                    <li><a href="/GSSK">GSSK</a></li>
+                <li><a href='/xcbohl'>XC Bohl 2018</a></li>
                 </ul>
 </nav>
 <div class='ALL'>
@@ -163,13 +163,7 @@ for (var i = 0; i < points.length; i++) {
     });
 var vectorLine = new ol.source.Vector({});
 vectorLine.addFeature(featureLine);
-var vectorLineLayer = new ol.layer.Vector({
-    source: vectorLine,
-    style: new ol.style.Style({
-    fill: new ol.style.Fill({ color: '#00FF00', weight: 4 }),
-    stroke: new ol.style.Stroke({ color: '#ff1aff', width: 5 })
-    })
-    });
+
 var WIL108Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
 var S7224Feature = new ol.Feature({geometry: S7224, label: 'S7'});
 var T33247Feature = new ol.Feature({geometry: T33247, label: 'T33DS'});
@@ -235,11 +229,11 @@ placement: })
 });
 /* ********************************************** */
 var colors = {
-'Mick Howard': 'rgba(0, 0, 255, 0.7)',
-'Bart Weghorst': 'rgba(0, 215, 255, 0.7)',
-//'Tyson Taylor': 'rgba(153, 153, 0, 0.95)',
-//'Tom Payne': 'rgba(0, 255, 255, 0.7)',
-//'Ulrich Prinz': 'rgba(0, 215, 255, 0.7)'
+'Lee Silver': 'rgba(0, 0, 255, 0.7)',
+'Matt Pruett': 'rgba(0, 230, 0, 0.7)',
+'Eric Kriner': 'rgba(153, 153, 0, 0.95)',
+'Willie Van Caulart': 'rgba(255, 0, 0, 0.7)',
+'Tim Delaney': 'rgba(153, 51, 255, 0.7)'
 };
 var styleCache = {};
 var styleFunction = function(feature, resolution) {
@@ -258,12 +252,22 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-//'Bart.igc',
-//'mick.igc',
-//'Jeff_Colombia.igc',
-//'data/igc/Tom-Payne.igc',
-//'data/igc/Ulrich-Prinz.igc'
+'LeeSilverTask1.igc',
+'MattPruettTask1.igc',
+'EricKrinerTask1.igc',
+'WillieVanCaulartTask1.igc',
+'TimDelaneyTask1.igc'
 ];
+
+var vectorLineLayer = new ol.layer.Vector({
+    source: vectorLine,
+    style: new ol.style.Style({
+    fill: new ol.style.Fill({ color: '#00FF00', weight: 4 }),
+    stroke: new ol.style.Stroke({ color: '#ff1aff', width: 5 })
+    })
+    });
+
+
 function get(url, callback) {
 var client = new XMLHttpRequest();
 client.open('GET', url);
@@ -372,11 +376,11 @@ map.on('postcompose', function(evt) {
 var vectorContext = evt.vectorContext;
 if (point !== null) {
 vectorContext.setImageStyle(imageStyle);
-vectorContext.drawPointGeometry(point);
+vectorContext.drawGeometry(point);
 }
 if (line !== null) {
 vectorContext.setFillStrokeStyle(null, strokeStyle);
-vectorContext.drawLineStringGeometry(line);
+vectorContext.drawGeometry(line);
 }
 });
 var featureOverlay = new ol.layer.Vector({
