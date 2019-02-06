@@ -156,11 +156,11 @@ text-shadow: 1px 1px #0066ff;
 </div>
 </div></div>
 <script>
-var WIL108 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 400);
-var WIL109 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 5000);
-var T47248 = new ol.geom.Circle(ol.proj.transform([-81.8233, 28.3764], 'EPSG:4326', 'EPSG:3857'), 400);
-var T55251 = new ol.geom.Circle(ol.proj.transform([-81.74415, 28.1823333333333], 'EPSG:4326', 'EPSG:3857'), 400);
-var GIL155 = new ol.geom.Circle(ol.proj.transform([-81.7530666666667, 28.0629666666667], 'EPSG:4326', 'EPSG:3857'), 400);
+var WIL108 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.5330333333333*Math.PI/180)));
+var WIL109 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 5000*(2-Math.cos(28.5330333333333*Math.PI/180)));
+var T47248 = new ol.geom.Circle(ol.proj.transform([-81.8233, 28.3764], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.3764*Math.PI/180)));
+var T55251 = new ol.geom.Circle(ol.proj.transform([-81.74415, 28.1823333333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.1823333333333*Math.PI/180)));
+var GIL155 = new ol.geom.Circle(ol.proj.transform([-81.7530666666667, 28.0629666666667], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.0629666666667*Math.PI/180)));
 var points = [
 [-81.8466666666667, 28.5330333333333],
 [-81.8466666666667, 28.5330333333333],
@@ -250,11 +250,11 @@ placement: })
 });
 /* ********************************************** */
 var colors = {
-'Mick Howard': 'rgba(0, 0, 255, 0.7)',
-'Bart Weghorst': 'rgba(0, 215, 255, 0.7)',
-//'Tyson Taylor': 'rgba(153, 153, 0, 0.95)',
-//'Tom Payne': 'rgba(0, 255, 255, 0.7)',
-//'Ulrich Prinz': 'rgba(0, 215, 255, 0.7)'
+  'Lee Silver': 'rgba(0, 0, 255, 0.7)',
+  'Max Kotchouro': 'rgba(0, 230, 0, 0.7)',
+  'John Alden': 'rgba(153, 153, 0, 0.95)',
+  'Matt Pruett': 'rgba(255, 0, 0, 0.7)',
+  'Tim Delaney': 'rgba(153, 51, 255, 0.7)'
 };
 var styleCache = {};
 var styleFunction = function(feature, resolution) {
@@ -273,11 +273,11 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-//'Bart.igc',
-//'mick.igc',
-//'Jeff_Colombia.igc',
-//'data/igc/Tom-Payne.igc',
-//'data/igc/Ulrich-Prinz.igc'
+  'LeeSilverTask3.igc',
+  'MaxKotchouroTask3.igc',
+  'JohnAldenTask3.igc',
+  'MattPruettTask3.igc',
+  'TimDelaneyTask3.igc'
 ];
 function get(url, callback) {
 var client = new XMLHttpRequest();
@@ -387,11 +387,11 @@ map.on('postcompose', function(evt) {
 var vectorContext = evt.vectorContext;
 if (point !== null) {
 vectorContext.setImageStyle(imageStyle);
-vectorContext.drawPointGeometry(point);
+vectorContext.drawGeometry(point);
 }
 if (line !== null) {
 vectorContext.setFillStrokeStyle(null, strokeStyle);
-vectorContext.drawLineStringGeometry(line);
+vectorContext.drawGeometry(line);
 }
 });
 var featureOverlay = new ol.layer.Vector({
