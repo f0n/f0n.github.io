@@ -372,11 +372,11 @@ map.on('postcompose', function(evt) {
 var vectorContext = evt.vectorContext;
 if (point !== null) {
 vectorContext.setImageStyle(imageStyle);
-vectorContext.drawPointGeometry(point);
+vectorContext.drawGeometry(point);
 }
 if (line !== null) {
 vectorContext.setFillStrokeStyle(null, strokeStyle);
-vectorContext.drawLineStringGeometry(line);
+vectorContext.drawGeometry(line);
 }
 });
 var featureOverlay = new ol.layer.Vector({
