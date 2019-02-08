@@ -145,10 +145,10 @@ text-shadow: 1px 1px #0066ff;
 </div>
 </div></div>
 <script>
-var WIL108 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 400);
-var WIL109 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 5000);
-var COL126 = new ol.geom.Circle(ol.proj.transform([-82.0672666666667, 28.8053], 'EPSG:4326', 'EPSG:3857'), 8000);
-var LEE181 = new ol.geom.Circle(ol.proj.transform([-82.0320833333333, 29.0843], 'EPSG:4326', 'EPSG:3857'), 1500);
+var WIL108 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.5330333333333*Math.PI/180)));
+var WIL109 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 5000*(2-Math.cos(28.5330333333333*Math.PI/180)));
+var COL126 = new ol.geom.Circle(ol.proj.transform([-82.0672666666667, 28.8053], 'EPSG:4326', 'EPSG:3857'), 8000*(2-Math.cos(28.8053*Math.PI/180)));
+var LEE181 = new ol.geom.Circle(ol.proj.transform([-82.0320833333333, 29.0843], 'EPSG:4326', 'EPSG:3857'), 1500*(2-Math.cos(29.0843*Math.PI/180)));
 var points = [
 [-81.8466666666667, 28.5330333333333],
 [-81.8466666666667, 28.5330333333333],
@@ -235,11 +235,11 @@ placement: })
 });
 /* ********************************************** */
 var colors = {
-//'Mick Howard': 'rgba(0, 0, 255, 0.7)',
-//'Bart Weghorst': 'rgba(0, 215, 255, 0.7)',
-//'Tyson Taylor': 'rgba(153, 153, 0, 0.95)',
-//'Tom Payne': 'rgba(0, 255, 255, 0.7)',
-//'Ulrich Prinz': 'rgba(0, 215, 255, 0.7)'
+  'John Alden': 'rgba(0, 0, 255, 0.7)',
+  'Max Kotchouro': 'rgba(0, 230, 0, 0.7)',
+  'Adam Smith': 'rgba(153, 153, 0, 0.95)',
+  'Tim Delaney': 'rgba(255, 0, 0, 0.7)',
+  'Cliff Rice': 'rgba(153, 51, 255, 0.7)'
 };
 var styleCache = {};
 var styleFunction = function(feature, resolution) {
@@ -258,11 +258,11 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-//'Bart.igc',
-//'mick.igc',
-//'Jeff_Colombia.igc',
-//'data/igc/Tom-Payne.igc',
-//'data/igc/Ulrich-Prinz.igc'
+'MaxKotchouroTask4.igc',
+'JohnAldenTask4.igc',
+'AdamSmithTask4.igc',
+'TimDelaneyTask4.igc',
+'CliffRiceTask4.igc'
 ];
 function get(url, callback) {
 var client = new XMLHttpRequest();
