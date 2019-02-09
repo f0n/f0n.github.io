@@ -16,6 +16,6 @@ My favorite part of OpenLayers is to be able to view IGC files. Thus, I can supe
 Some examples: 
 --------------
 
-  *[2018 XC Bohl Task 1](https://f0n.github.io/xcbohl/task1)
-  *[2018 Santa Cruz Flats Task 3](https://f0n.github.io/xcbohl/scfr3)
-  *[2018 GSSK Task 1](https://f0n.github.io/GSSK/task1/)
+  * [2018 XC Bohl Task 1](https://f0n.github.io/xcbohl/task1)
+  * [2018 Santa Cruz Flats Task 3](https://f0n.github.io/xcbohl/scfr3)
+  * [2018 GSSK Task 1](https://f0n.github.io/GSSK/task1/)
