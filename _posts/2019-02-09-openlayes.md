@@ -14,6 +14,9 @@ There is view of all waypoints for both [Cowboy Up](http://www.cuhanggliding.com
 My favorite part of OpenLayers is to be able to view IGC files. Thus, I can superimpose the task and the track, similarly to what [Airtribune](https://airtribune.com/) shows. Obviously a work in development as I need to add player capability, ensure the projections are correct, and ultimately live tracking. But for now, open source software for hang gliding flight tracking paint a right picture.
 
 Some examples: 
+
 [2018 XC Bohl Task 1] (https://f0n.github.io/xcbohl/task1)
+
 [2018 Santa Cruz Flats Task 3] (https://f0n.github.io/xcbohl/scfr3)
+
 [2018 GSSK Task 1] (https://f0n.github.io/GSSK/task1/)
