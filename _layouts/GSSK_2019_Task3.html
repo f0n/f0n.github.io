@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>GSSK_2019_Task2</title>
+<title>GSSK_2019_Task3</title>
 <meta charset="ISO-8859-1">
 <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
@@ -97,24 +97,24 @@ text-shadow: 1px 1px #0066ff;
 </tr>
 <tr>
 <td>2</td>
-<td>TURN33</td>
-<td>20.82</td>
+<td>T33DS</td>
+<td>30.58</td>
 <td>400</td>
 <td>12:00</td>
 <td>17:00</td>
-<td>28.71518, -81.89670</td>
-<td>346</td>
+<td>28.25847, -81.82500</td>
+<td>176</td>
 <td>36</td>
 </tr>
 <tr>
 <td>3</td>
-<td>GATORS</td>
-<td>13.38</td>
+<td>WALABY</td>
+<td>13.67</td>
 <td>400</td>
 <td>12:00</td>
 <td>17:00</td>
-<td>28.62733, -81.80280</td>
-<td>137</td>
+<td>28.25298, -81.68552</td>
+<td>93</td>
 <td>36</td>
 </tr>
 </tbody>
@@ -136,8 +136,8 @@ text-shadow: 1px 1px #0066ff;
 </div></div>
 <script>
 var WIL108 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 5000*(2-Math.cos(28.5330333333333*Math.PI/180)));
-var TUR259 = new ol.geom.Circle(ol.proj.transform([-81.8967, 28.7151833333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.7151833333333*Math.PI/180)));
-var GAT154 = new ol.geom.Circle(ol.proj.transform([-81.8028, 28.6273333333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.6273333333333*Math.PI/180)));
+var T33247 = new ol.geom.Circle(ol.proj.transform([-81.825, 28.2584666666667], 'EPSG:4326', 'EPSG:3857'), 5000*(2-Math.cos(28.2584666666667*Math.PI/180)));
+var WAL265 = new ol.geom.Circle(ol.proj.transform([-81.6855166666667, 28.2529833333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.2529833333333*Math.PI/180)));
 var points = [
 [-81.8466666666667, 28.5330333333333],
 [-81.8967, 28.7151833333333],
@@ -153,12 +153,12 @@ var vectorLine = new ol.source.Vector({});
 vectorLine.addFeature(featureLine);
 
 var WIL108Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
-var TUR259Feature = new ol.Feature({geometry: TUR259, label: 'TURN33'});
-var GAT154Feature = new ol.Feature({geometry: GAT154, label: 'GATORS'});
+var T33247Feature = new ol.Feature({geometry: T33247, label: 'T33DS'});
+var WAL265Feature = new ol.Feature({geometry: WAL265, label: 'WALABY'});
 var vectorSource = new ol.source.Vector({ projection: 'EPSG:4326', features: [
 WIL108Feature,
-TUR259Feature,
-GAT154Feature,
+T33247Feature,
+WAL265Feature,
 ]});
 var style = new ol.style.Style({
      fill: new ol.style.Fill({
@@ -281,7 +281,7 @@ time.start = Math.min(time.start, geometry.getFirstCoordinate()[2]);
 time.stop = Math.max(time.stop, geometry.getLastCoordinate()[2]);
 time.duration = time.stop - time.start;
 });
-var wharton = [-81.8487222222222, 28.6251833333333]; // caution partner, read on...
+var wharton = [-81.7857277777778, 28.3481611111111]; // caution partner, read on...
 // since we are using OSM, we have to transform the coordinates...
 var whartonMercator = ol.proj.fromLonLat(wharton);
 var map = new ol.Map({
@@ -304,7 +304,7 @@ collapsible: false
 }),
 view: new ol.View({
 center: whartonMercator,
-zoom: 11.5
+zoom: 11
 })
 });
 var point = null;
