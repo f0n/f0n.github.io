@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>GSSK_2019_Task4</title>
+<meta charset="ISO-8859-1">
 <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
@@ -55,8 +56,8 @@ text-shadow: 1px 1px #0066ff;
                     <li><a href='/'>Home</a></li>
                     <li><a href='/about'>About</a></li>
                     <li><a href='/blog'>Blog</a></li>
-                <li><a href='/xcbohl'>XC Bohl 2018</a></li>
-                <li><a href='/GSSK'>GSSK</a></li>
+                    <li><a href='/xcbohl'>XC Bohl 2018</a></li>
+                    <li><a href="/GSSK">GSSK</a></li>
                 </ul>
 </nav>
 <div class='ALL'>
@@ -67,7 +68,7 @@ text-shadow: 1px 1px #0066ff;
 <div id='legende'>
 <div class='udiv_legende' id='legende_1'>
 <div id='Task'>
-<h2 class='collapsible'>GSSK_2019_Task4</h2>
+<h2 class='collapsible'>GSSK 2019 Task4</h2>
 <table>
 <thead>
 <tr>
@@ -176,13 +177,7 @@ for (var i = 0; i < points.length; i++) {
     });
 var vectorLine = new ol.source.Vector({});
 vectorLine.addFeature(featureLine);
-var vectorLineLayer = new ol.layer.Vector({
-    source: vectorLine,
-    style: new ol.style.Style({
-    fill: new ol.style.Fill({ color: '#00FF00', weight: 4 }),
-    stroke: new ol.style.Stroke({ color: '#00FF00', width: 2 })
-    })
-    });
+
 var WIL108Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
 var T50249Feature = new ol.Feature({geometry: T50249, label: 'T50469'});
 var T50250Feature = new ol.Feature({geometry: T50250, label: 'T50471'});
@@ -233,12 +228,28 @@ style.getText().setText(feature.get('label'));
 return [style];
 }
 });
+/* **********************************************
+// Points
+function pointStyleFunction(feature, resolution) {
+return new ol.style.Style({
+text: createTextStyle(feature, resolution, myDom.points)
+});
+}
+var vectorPoints = new ol.layer.Vector({
+source: vectorSource,
+style: new ol.style.Style({
+new ol.style.Text({
+text: feature.get('label'),
+placement: })
+        });
+});
+/* ********************************************** */
 var colors = {
-'Mick Howard': 'rgba(0, 0, 255, 0.7)',
-'Bart Weghorst': 'rgba(0, 215, 255, 0.7)',
-//'Tyson Taylor': 'rgba(153, 153, 0, 0.95)',
-//'Tom Payne': 'rgba(0, 255, 255, 0.7)',
-//'Ulrich Prinz': 'rgba(0, 215, 255, 0.7)'
+'Oded Kalir': 'rgba(0, 0, 255, 0.7)',
+'Stephan Mentler': 'rgba(0, 215, 255, 0.7)',
+'Jon Irlbeck': 'rgba(153, 153, 0, 0.95)',
+'Richard Caylor': 'rgba(255, 0, 0, 0.7)',
+'James Kolynich': 'rgba(153, 51, 255, 0.7)'
 };
 var styleCache = {};
 var styleFunction = function(feature, resolution) {
@@ -257,12 +268,13 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-'Bart.igc',
-'mick.igc',
-//'Jeff_Colombia.igc',
-//'data/igc/Tom-Payne.igc',
-//'data/igc/Ulrich-Prinz.igc'
+'Kalir.igc',
+'Mentler.igc',
+'Irlbeck.igc',
+'Caylor.igc',
+'Kolynich.igc'
 ];
+
 var vectorLineLayer = new ol.layer.Vector({
     source: vectorLine,
     style: new ol.style.Style({
@@ -270,6 +282,8 @@ var vectorLineLayer = new ol.layer.Vector({
     stroke: new ol.style.Stroke({ color: '#ff1aff', width: 5 })
     })
     });
+
+
 function get(url, callback) {
 var client = new XMLHttpRequest();
 client.open('GET', url);
@@ -378,11 +392,11 @@ map.on('postcompose', function(evt) {
 var vectorContext = evt.vectorContext;
 if (point !== null) {
 vectorContext.setImageStyle(imageStyle);
-vectorContext.drawPointGeometry(point);
+vectorContext.drawGeometry(point);
 }
 if (line !== null) {
 vectorContext.setFillStrokeStyle(null, strokeStyle);
-vectorContext.drawLineStringGeometry(line);
+vectorContext.drawGeometry(line);
 }
 });
 var featureOverlay = new ol.layer.Vector({
@@ -431,5 +445,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+  
+ 
 </body>
 </html>
