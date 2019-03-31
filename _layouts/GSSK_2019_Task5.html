@@ -153,11 +153,11 @@ var vectorLine = new ol.source.Vector({});
 vectorLine.addFeature(featureLine);
 
 var WIL108Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
-var WIL108Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
+var WIL1081Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
 var LEE181Feature = new ol.Feature({geometry: LEE181, label: 'LEEWRD'});
 var vectorSource = new ol.source.Vector({ projection: 'EPSG:4326', features: [
 WIL108Feature,
-WIL108Feature,
+WIL1081Feature,
 LEE181Feature,
 ]});
 var style = new ol.style.Style({
@@ -215,10 +215,10 @@ placement: })
 });
 /* ********************************************** */
 var colors = {
-'Oded Kalir': 'rgba(0, 0, 255, 0.7)',
-'Stephan Mentler': 'rgba(0, 215, 255, 0.7)',
-'Jon Irlbeck': 'rgba(153, 153, 0, 0.95)',
-'Richard Caylor': 'rgba(255, 0, 0, 0.7)',
+'Richard Milla': 'rgba(0, 0, 255, 0.7)',
+'Richard Caylor': 'rgba(0, 215, 255, 0.7)',
+'Soham Mehta': 'rgba(153, 153, 0, 0.95)',
+'Abhishek Sethi': 'rgba(255, 0, 0, 0.7)',
 'James Kolynich': 'rgba(153, 51, 255, 0.7)'
 };
 var styleCache = {};
@@ -238,10 +238,10 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-'Kalir.igc',
-'Mentler.igc',
-'Irlbeck.igc',
+'Milla.igc',
 'Caylor.igc',
+'Mehta.igc',
+'Sethi.igc',
 'Kolynich.igc'
 ];
 
@@ -304,7 +304,7 @@ collapsible: false
 }),
 view: new ol.View({
 center: whartonMercator,
-zoom: 10.5172692965381
+zoom: 10
 })
 });
 var point = null;
@@ -415,7 +415,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-  
- 
+
+
 </body>
 </html>
