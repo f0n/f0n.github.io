@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pre-Worlds 2019 Sport Task 1</title>
+<script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<link rel='stylesheet' href='https://openlayers.org/en/v3.10.1/css/ol.css' type='text/css'>
+<script src='https://openlayers.org/en/v5.3.0/build/ol.js'></script>
+<link rel='stylesheet' type='text/css' href='/css/cuhg.css'>
+<style>
+html, body {
+height: 100%;
+}
+#legende{
+position: absolute;
+z-index: 100000;
+margin-left: 3%;
+width: 35%;
+}
+#cuhg_logo{
+width: 50%;
+margin-left: -3%;
+margin-top: 3%;
+}
+#Task {
+Font -family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+font-size: 12px;
+}
+#Task td, #Task th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+#Task tr:nth-child(even){background-color: #f2f2f2;}
+#Task tr:nth-child(odd){background-color: #ffffff;}
+#Task tr:hover {background-color: #ddd;}
+#Task th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #4CAF50;
+color: white;
+}
+h2 {
+text-shadow: 1px 1px #0066ff;
+}
+.ALL {margin: auto;}
+.map{height: 700px;}
+</style>
+</head>
+<body>
+<nav>
+                <ul>
+                    <li><a href='/'>Home</a></li>
+                    <li><a href='/comps'>Comps</a></li>
+                    <li><a href='/blog'>Blog</a></li>
+                <li><a href='/xcbohl'>XC Bohl 2018</a></li>
+                </ul>
+</nav>
+<div class='ALL'>
+<div class='container-fluid'>
+<div class='row-fluid'>
+<div class='span12'>
+<div id='map' class='map'>
+<div id='legende'>
+<div class='udiv_legende' id='legende_1'>
+<img id='cuhg_logo' src='https://www.cuhanggliding.com/wp-content/uploads/2017/11/shirt-design_21-1024x947.png'>
+<div id='Task'>
+<h2 class='collapsible'>Pre-Worlds 2019 Sport Task 1</h2>
+<table>
+<thead>
+<tr>
+<th  >No</th>
+<th  >Id</th>
+<th  >Leg Dist (km)</th>
+<th  >Radius (m)</th>
+<th  >Open</th>
+<th  >Close</th>
+<th  >Coordinates (Lat, Lon)</th>
+<th  >Heading</th>
+<th  >Altitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>WILOWTREE PARK</td>
+<td>0.00</td>
+<td>5000</td>
+<td>14:00</td>
+<td>20:00</td>
+<td>28.53303, -81.84667</td>
+<td>-</td>
+<td>36</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T47433</td>
+<td>17.55</td>
+<td>1000</td>
+<td>14:00</td>
+<td>20:00</td>
+<td>28.37640, -81.82330</td>
+<td>173</td>
+<td>36</td>
+</tr>
+<tr>
+<td>3</td>
+<td>T33DS</td>
+<td>13.11</td>
+<td>5000</td>
+<td>14:00</td>
+<td>20:00</td>
+<td>28.25847, -81.82500</td>
+<td>181</td>
+<td>36</td>
+</tr>
+<tr>
+<td>4</td>
+<td>WALABY</td>
+<td>13.67</td>
+<td>400</td>
+<td>14:00</td>
+<td>20:00</td>
+<td>28.25298, -81.68552</td>
+<td>93</td>
+<td>36</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<br>
+</div>
+</div>
+</div>
+<input id='time' type='range' value='0' steps='1' />
+<div class='span4 offset4 pull-left'>
+<div id='info' class='alert alert-success'>
+&nbsp;
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<script>
+var WIL108 = new ol.geom.Circle(ol.proj.transform([-81.8466666666667, 28.5330333333333], 'EPSG:4326', 'EPSG:3857'), 5000*(2-Math.cos(28.5330333333333*Math.PI/180)));
+var T47248 = new ol.geom.Circle(ol.proj.transform([-81.8233, 28.3764], 'EPSG:4326', 'EPSG:3857'), 1000*(2-Math.cos(28.3764*Math.PI/180)));
+var T33247 = new ol.geom.Circle(ol.proj.transform([-81.825, 28.2584666666667], 'EPSG:4326', 'EPSG:3857'), 5000*(2-Math.cos(28.2584666666667*Math.PI/180)));
+var WAL265 = new ol.geom.Circle(ol.proj.transform([-81.6855166666667, 28.2529833333333], 'EPSG:4326', 'EPSG:3857'), 400*(2-Math.cos(28.2529833333333*Math.PI/180)));
+var points = [
+[-81.8466666666667, 28.5330333333333],
+[-81.8233, 28.3764],
+[-81.825, 28.2584666666667],
+[-81.6855166666667, 28.2529833333333],
+];
+for (var i = 0; i < points.length; i++) {
+    points[i] = ol.proj.transform(points[i], 'EPSG:4326', 'EPSG:3857');
+    }
+    var featureLine = new ol.Feature({
+    geometry: new ol.geom.LineString(points)
+    });
+var vectorLine = new ol.source.Vector({});
+vectorLine.addFeature(featureLine);
+var vectorLineLayer = new ol.layer.Vector({
+    source: vectorLine,
+    style: new ol.style.Style({
+    fill: new ol.style.Fill({ color: '#00FF00', weight: 4 }),
+    stroke: new ol.style.Stroke({ color: '#00FF00', width: 2 })
+    })
+    });
+var WIL108Feature = new ol.Feature({geometry: WIL108, label: 'WILOWTREE PARK'});
+var T47248Feature = new ol.Feature({geometry: T47248, label: 'T47433'});
+var T33247Feature = new ol.Feature({geometry: T33247, label: 'T33DS'});
+var WAL265Feature = new ol.Feature({geometry: WAL265, label: 'WALABY'});
+var vectorSource = new ol.source.Vector({ projection: 'EPSG:4326', features: [
+WIL108Feature,
+T47248Feature,
+T33247Feature,
+WAL265Feature,
+]});
+var style = new ol.style.Style({
+     fill: new ol.style.Fill({
+color:                     'rgba(20, 100, 240, 0.3)'
+}),
+stroke: new ol.style.Stroke({
+width: 3,
+color:                     'rgba(0, 100, 240, 0.8)'
+     }),
+image: new ol.style.Circle({
+fill: new ol.style.Fill({
+color:                         'rgba(55, 200, 150, 0.5)'
+         }),
+stroke: new ol.style.Stroke({
+width: 10,
+color:                         'rgba(55, 200, 150, 0.8)'
+}),
+radius: 7
+}),
+text: new ol.style.Text({
+font:                   '22px Calibri,sans-serif',
+                  fill: new ol.style.Fill({
+color:                     '#2f2f2f'
+       }),
+stroke: new ol.style.Stroke({
+color:                     '#cccccc',
+width: 4
+}),
+                  offsetX: 14,
+offsetY: -14
+}),
+});
+var vectorLayer = new ol.layer.Vector({
+           source: vectorSource,
+                                  style: function(feature) {
+style.getText().setText(feature.get('label'));
+return [style];
+}
+});
+
+var colors = {
+'Erik Grabowski': 'rgba(0, 0, 255, 0.7)',
+'Mark Dowsett': 'rgba(0, 215, 255, 0.7)',
+'Rod Regier': 'rgba(153, 153, 0, 0.95)',
+'Ricky Rojas': 'rgba(255, 0, 0, 0.7)',
+'Richard Milla': 'rgba(153, 51, 255, 0.7)'
+};
+var styleCache = {};
+var styleFunction = function(feature, resolution) {
+var color = colors[feature.get('PLT')];
+var styleArray = styleCache[color];
+if (!styleArray) {
+styleArray = [new ol.style.Style({
+stroke: new ol.style.Stroke({
+color: color,
+width: 3
+})
+})];
+styleCache[color] = styleArray;
+}
+return styleArray;
+};
+var vectorSource = new ol.source.Vector();
+var igcUrls = [
+'Erik Grabowski.20190415-180000.219.igc',
+'MarkDowsett.20190415-180000.214.igc',
+'RodRegier.20190415-180000.207.igc',
+'RickyRojas.20190415-180000.220.igc',
+'RichardMilla.20190415-180000.201.igc'
+];
+var vectorLineLayer = new ol.layer.Vector({
+    source: vectorLine,
+    style: new ol.style.Style({
+    fill: new ol.style.Fill({ color: '#00FF00', weight: 4 }),
+    stroke: new ol.style.Stroke({ color: '#ff1aff', width: 5 })
+    })
+    });
+    function get(url, callback) {
+    var client = new XMLHttpRequest();
+    client.open('GET', url);
+    client.onload = function() {
+    callback(client.responseText);
+    };
+    client.send();
+    }
+    var igcFormat = new ol.format.IGC();
+    for (var i = 0; i < igcUrls.length; ++i) {
+    get(igcUrls[i], function(data) {
+    var features = igcFormat.readFeatures(data,
+    {featureProjection: 'EPSG:3857'});
+    vectorSource.addFeatures(features);
+    });
+    }
+    var time = {
+    start: Infinity,
+    stop: -Infinity,
+    duration: 0
+    };
+    vectorSource.on('addfeature', function(event) {
+    var geometry = event.feature.getGeometry();
+    time.start = Math.min(time.start, geometry.getFirstCoordinate()[2]);
+    time.stop = Math.max(time.stop, geometry.getLastCoordinate()[2]);
+    time.duration = time.stop - time.start;
+    });
+var wharton = [-81.7951208333333, 28.3552208333333]; // caution partner, read on...
+// since we are using OSM, we have to transform the coordinates...
+var whartonMercator = ol.proj.fromLonLat(wharton);
+var map = new ol.Map({
+layers: [
+new ol.layer.Tile({
+source: new ol.source.OSM()
+}),
+new ol.layer.Vector({
+source: vectorSource,
+style:       styleFunction
+}),
+vectorLineLayer,
+vectorLayer
+],
+target:   'map',
+controls: ol.control.defaults({
+attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+collapsible: false
+})
+}),
+view: new ol.View({
+center: whartonMercator,
+zoom: 10
+})
+});
+var point = null;
+var line = null;
+var displaySnap = function(coordinate) {
+var closestFeature = vectorSource.getClosestFeatureToCoordinate(coordinate);
+var info = document.getElementById('info');
+if (closestFeature === null) {
+point = null;
+line = null;
+info.innerHTML = '&nbsp;';
+} else {
+var geometry = closestFeature.getGeometry();
+var closestPoint = geometry.getClosestPoint(coordinate);
+if (point === null) {
+point = new ol.geom.Point(closestPoint);
+} else {
+point.setCoordinates(closestPoint);
+}
+var date = new Date(closestPoint[2] * 1000);
+ info.innerHTML =
+closestFeature.get('PLT') + ' (' + date.toUTCString() + ')';
+var coordinates = [coordinate, [closestPoint[0], closestPoint[1]]];
+if (line === null) {
+line = new ol.geom.LineString(coordinates);
+} else {
+line.setCoordinates(coordinates);
+}
+}
+map.render();
+};
+map.on('pointermove', function(evt) {
+if (evt.dragging) {
+return;
+}
+var coordinate = map.getEventCoordinate(evt.originalEvent);
+displaySnap(coordinate);
+});
+map.on('click', function(evt) {
+displaySnap(evt.coordinate);
+});
+var imageStyle = new ol.style.Circle({
+radius: 5,
+fill: null,
+stroke: new ol.style.Stroke({
+color:     'rgba(255,0,255,0.9)',
+width: 1
+})
+});
+var strokeStyle = new ol.style.Stroke({
+color:   'rgba(255,0,255,0.9)',
+width: 1
+});
+map.on('postcompose', function(evt) {
+var vectorContext = evt.vectorContext;
+if (point !== null) {
+vectorContext.setImageStyle(imageStyle);
+vectorContext.drawGeometry(point);
+}
+if (line !== null) {
+vectorContext.setFillStrokeStyle(null, strokeStyle);
+vectorContext.drawGeometry(line);
+}
+});
+var featureOverlay = new ol.layer.Vector({
+source: new ol.source.Vector(),
+map: map,
+style: new ol.style.Style({
+image: new ol.style.Circle({
+radius: 5,
+fill: new ol.style.Fill({
+color:         'rgba(255,0,0,0.9)'
+}),
+stroke: null
+})
+})
+});
+document.getElementById('time').addEventListener('input', function() {
+var value = parseInt(this.value, 10) / 100;
+var m = time.start + (time.duration * value);
+vectorSource.forEachFeature(function(feature) {
+var geometry = /** @type {ol.geom.LineString} */ (feature.getGeometry());
+var coordinate = geometry.getCoordinateAtM(m, true);
+var highlight = feature.get('highlight');
+if (highlight === undefined) {
+highlight = new ol.Feature(new ol.geom.Point(coordinate));
+feature.set('highlight', highlight);
+featureOverlay.getSource().addFeature(highlight);
+} else {
+highlight.getGeometry().setCoordinates(coordinate);
+}
+});
+map.render();
+});
+</script>
+<script>
+var coll = document.getElementsByClassName('collapsible');
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener('click', function() {
+    this.classList.toggle('active');
+    var content = this.nextElementSibling;
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+    } else {
+      content.style.display = 'block';
+    }
+  });
+}
+</script>
+</body>
+</html>
