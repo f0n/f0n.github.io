@@ -29,37 +29,6 @@ table, th, td {
     padding: 5px;
 }
 
-/*
-#legende{
-position: absolute;
-z-index: 100000;
-margin-left: 3%;
-width: 35%;
-}
-#cuhg_logo{
-width: 50%;
-margin-left: -3%;
-margin-top: 3%;
-}
-#Task {
-Font -family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-border-collapse: collapse;
-font-size: 12px;
-}
-#Task td, #Task th {
-border: 1px solid #ddd;
-padding: 8px;
-}
-#Task tr:nth-child(even){background-color: #f2f2f2;}
-#Task tr:nth-child(odd){background-color: #ffffff;}
-#Task tr:hover {background-color: #ddd;}
-#Task th {
-padding-top: 12px;
-padding-bottom: 12px;
-text-align: left;
-background-color: #4CAF50;
-color: white;
-}*/
 h2, h1 {
 text-shadow: 1px 1px #0066ff;
 }
@@ -99,570 +68,621 @@ text-shadow: 1px 1px #0066ff;
 <h2 class='collapsible'>Total Results</h2>
 <div class="content">
   <table class="fs_res">
-          <thead>
-            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-              <th class="fs_res">Task</th>
-              <th class="fs_res">Date</th>
-              <th class="fs_res">Distance</th>
-              <th class="fs_res">
-              Day Quality
-            </th>
-              <th class="fs_res"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-              <td class="fs_res">
-							T1 Task 1</td>
-              <td class="fs_res">2019-04-21 14:00  </td>
-              <td class="fs_res" align="right"> 100.0 km</td>
-              <td class="fs_res" align="right">99%</td>
-              <td class="fs_res">Race to Goal with 4 startgate(s)</td>
-            </tr>
-            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-              <td class="fs_res">
-							T2 Task 2</td>
-              <td class="fs_res">2019-04-22 14:30  </td>
-              <td class="fs_res" align="right"> 105.7 km</td>
-              <td class="fs_res" align="right">100%</td>
-              <td class="fs_res">Race to Goal with 4 startgate(s)</td>
-            </tr>
-          </tbody>
-        </table><br><table class="fs_res">
-          <thead>
-            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-              <th class="fs_res">#</th>
-              <th class="fs_res">Id</th>
-              <th class="fs_res">Name</th>
-              <th class="fs_res"></th>
-              <th class="fs_res">Nat</th>
-              <th class="fs_res">Glider</th>
-              <th class="fs_res">Sponsor</th>
-              <th class="fs_res">T 1</th>
-              <th class="fs_res">T 2</th>
-              <th class="fs_res">Total</th>
-            </tr>
-          </thead>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">1</td>
-            <td class="fs_res">223</td>
-            <td class="fs_res">Kevin Dutt</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Aeros Combat 13.5</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">988</td>
-            <td class="fs_res" style="text-align: right">947</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1935</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">2</td>
-            <td class="fs_res">222</td>
-            <td class="fs_res">Pedro L. Garcia</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T3 144</td>
-            <td class="fs_res">Wills Wing / Digiflly</td>
-            <td class="fs_res" style="text-align: right">987</td>
-            <td class="fs_res" style="text-align: right">896</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1883</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">3</td>
-            <td class="fs_res">131</td>
-            <td class="fs_res">Bruce Barmakian</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Aeros Combat 12.7</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">957</td>
-            <td class="fs_res" style="text-align: right">886</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1843</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">4</td>
-            <td class="fs_res">107</td>
-            <td class="fs_res">Marcelo Alexandre Menin</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C 154</td>
-            <td class="fs_res">www.parajets.com.br</td>
-            <td class="fs_res" style="text-align: right">954</td>
-            <td class="fs_res" style="text-align: right">864</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1818</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">5</td>
-            <td class="fs_res">137</td>
-            <td class="fs_res">Alvaro Figueiredo Sandoli</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">BRA</td>
-            <td class="fs_res">Wills Wing T3 144</td>
-            <td class="fs_res">Coronata/WillsWing/Rotor</td>
-            <td class="fs_res" style="text-align: right">953</td>
-            <td class="fs_res" style="text-align: right">861</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1814</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">6</td>
-            <td class="fs_res">113</td>
-            <td class="fs_res">Jonny Durand</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">AUS</td>
-            <td class="fs_res">Moyes RX 4 Pro</td>
-            <td class="fs_res">Red Bull, Moyes, Mitsubishi </td>
-            <td class="fs_res" style="text-align: right">902</td>
-            <td class="fs_res" style="text-align: right">905</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1807</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">7</td>
-            <td class="fs_res">132</td>
-            <td class="fs_res">Phill Bloom</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Moyes RX 3.5</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">945</td>
-            <td class="fs_res" style="text-align: right">857</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1802</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">8</td>
-            <td class="fs_res">105</td>
-            <td class="fs_res">Akira Nagusa</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">JPN</td>
-            <td class="fs_res">Wills Wing T23144</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">972</td>
-            <td class="fs_res" style="text-align: right">828</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1800</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">9</td>
-            <td class="fs_res">123</td>
-            <td class="fs_res">Glen Volk</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Moyes RX 3.5</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">845</td>
-            <td class="fs_res" style="text-align: right">926</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1771</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">10</td>
-            <td class="fs_res">141</td>
-            <td class="fs_res">Patrick Pannese</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T3 144</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">920</td>
-            <td class="fs_res" style="text-align: right">828</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1748</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">11</td>
-            <td class="fs_res">114</td>
-            <td class="fs_res">Richard lovelace</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">GBR</td>
-            <td class="fs_res">Wills Wing T3 144 </td>
-            <td class="fs_res">Strensall honey bees.  </td>
-            <td class="fs_res" style="text-align: right">876</td>
-            <td class="fs_res" style="text-align: right">828</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1704</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">12</td>
-            <td class="fs_res">133</td>
-            <td class="fs_res">Raul Guerra</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">ECU</td>
-            <td class="fs_res">Aeros Combat C 12.7</td>
-            <td class="fs_res">www.guerragoes.com</td>
-            <td class="fs_res" style="text-align: right">890</td>
-            <td class="fs_res" style="text-align: right">807</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1697</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">13</td>
-            <td class="fs_res">111</td>
-            <td class="fs_res">Fabiano Nahoum</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">BRA</td>
-            <td class="fs_res">Icaro Laminar 14.1</td>
-            <td class="fs_res">Viva ao Vento Fly Ranch / Wallaby</td>
-            <td class="fs_res" style="text-align: right">835</td>
-            <td class="fs_res" style="text-align: right">845</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1680</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">14</td>
-            <td class="fs_res">139</td>
-            <td class="fs_res">Guilherme Sandoli</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">BRA</td>
-            <td class="fs_res">WillsWing T2C 136</td>
-            <td class="fs_res">Rotor Harness; WillsWing; Coronata</td>
-            <td class="fs_res" style="text-align: right">804</td>
-            <td class="fs_res" style="text-align: right">836</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1640</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">15</td>
-            <td class="fs_res">110</td>
-            <td class="fs_res">Luke Waters</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C 154</td>
-            <td class="fs_res">Teton Hang Gliding</td>
-            <td class="fs_res" style="text-align: right">827</td>
-            <td class="fs_res" style="text-align: right">753</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1580</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">16</td>
-            <td class="fs_res">102</td>
-            <td class="fs_res">Konstantin Lukyanov</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">RUS</td>
-            <td class="fs_res">Moyes RX 3.5</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">688</td>
-            <td class="fs_res" style="text-align: right">827</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1515</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">17</td>
-            <td class="fs_res">101</td>
-            <td class="fs_res">Davis Straub</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T3 144</td>
-            <td class="fs_res">The Oz Report</td>
-            <td class="fs_res" style="text-align: right">798</td>
-            <td class="fs_res" style="text-align: right">704</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1502</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">18</td>
-            <td class="fs_res">140</td>
-            <td class="fs_res">Bruno Sandoli</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">BRA</td>
-            <td class="fs_res">Wills Wing T2C 144</td>
-            <td class="fs_res">Rotor harness/CORONATA</td>
-            <td class="fs_res" style="text-align: right">970</td>
-            <td class="fs_res" style="text-align: right">481</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1451</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">19</td>
-            <td class="fs_res">126</td>
-            <td class="fs_res">Zac Majors</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T3 144</td>
-            <td class="fs_res">Wills Wing, Flytec</td>
-            <td class="fs_res" style="text-align: right">981</td>
-            <td class="fs_res" style="text-align: right">443</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1424</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">20</td>
-            <td class="fs_res">112</td>
-            <td class="fs_res">Wolfgang Siess</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">AUT</td>
-            <td class="fs_res">Wills Wing  T3 154</td>
-            <td class="fs_res">WillsWing,Rhythm of flight   </td>
-            <td class="fs_res" style="text-align: right">946</td>
-            <td class="fs_res" style="text-align: right">431</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1377</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">21</td>
-            <td class="fs_res">122</td>
-            <td class="fs_res">Jeff Chipman</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Moyes RX 3.5</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">398</td>
-            <td class="fs_res" style="text-align: right">918</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1316</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">22</td>
-            <td class="fs_res">119</td>
-            <td class="fs_res">Philippe Michaud</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">CAN</td>
-            <td class="fs_res">Wills Wing T2C 144</td>
-            <td class="fs_res">Aviation Saint Paul</td>
-            <td class="fs_res" style="text-align: right">819</td>
-            <td class="fs_res" style="text-align: right">439</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1258</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">23</td>
-            <td class="fs_res">138</td>
-            <td class="fs_res">Mike Glennon</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">COL</td>
-            <td class="fs_res">Moyes RX 5</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">749</td>
-            <td class="fs_res" style="text-align: right">428</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1177</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">24</td>
-            <td class="fs_res">128</td>
-            <td class="fs_res">Willy Dydo</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C 136</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">715</td>
-            <td class="fs_res" style="text-align: right">434</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1149</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">25</td>
-            <td class="fs_res">118</td>
-            <td class="fs_res">Peter Kelley</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Icaro Laminar 13.2</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">745</td>
-            <td class="fs_res" style="text-align: right">400</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1145</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">26</td>
-            <td class="fs_res">121</td>
-            <td class="fs_res">Larry Bunner</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C144</td>
-            <td class="fs_res">Dangerous Toys, WW</td>
-            <td class="fs_res" style="text-align: right">834</td>
-            <td class="fs_res" style="text-align: right">310</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1144</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">27</td>
-            <td class="fs_res">125</td>
-            <td class="fs_res">Kip Stone</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Moyes RX 5</td>
-            <td class="fs_res">none</td>
-            <td class="fs_res" style="text-align: right">670</td>
-            <td class="fs_res" style="text-align: right">459</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1129</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">28</td>
-            <td class="fs_res">104</td>
-            <td class="fs_res">Roger Irby</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C 154</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">946</td>
-            <td class="fs_res" style="text-align: right">178</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1124</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">29</td>
-            <td class="fs_res">103</td>
-            <td class="fs_res">John Simon</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Aeros Combat C 12.7</td>
-            <td class="fs_res">US Aeros, Sport Aviation Svcs</td>
-            <td class="fs_res" style="text-align: right">990</td>
-            <td class="fs_res" style="text-align: right">120</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">1110</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">30</td>
-            <td class="fs_res">136</td>
-            <td class="fs_res">Corinna Schwiegershausen</td>
-            <td class="fs_res">F</td>
-            <td class="fs_res">GER</td>
-            <td class="fs_res">Moyes RX 3 Pro</td>
-            <td class="fs_res">Red Bull, Moyes, icebreaker</td>
-            <td class="fs_res" style="text-align: right">926</td>
-            <td class="fs_res" style="text-align: right">0</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">926</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">31</td>
-            <td class="fs_res">115</td>
-            <td class="fs_res">JD Guillemette</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Aeros Combat C 13.5</td>
-            <td class="fs_res">Sport Aviation Services</td>
-            <td class="fs_res" style="text-align: right">753</td>
-            <td class="fs_res" style="text-align: right">106</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">859</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">32</td>
-            <td class="fs_res">130</td>
-            <td class="fs_res">Mick Howard</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Moyes RX 3.5</td>
-            <td class="fs_res">Joanne</td>
-            <td class="fs_res" style="text-align: right">308</td>
-            <td class="fs_res" style="text-align: right">421</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">729</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">33</td>
-            <td class="fs_res">129</td>
-            <td class="fs_res">Robert Clarkson</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">CAN</td>
-            <td class="fs_res">Wills Wing T2C 154</td>
-            <td class="fs_res">Muller wind sports</td>
-            <td class="fs_res" style="text-align: right">366</td>
-            <td class="fs_res" style="text-align: right">245</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">611</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">33</td>
-            <td class="fs_res">116</td>
-            <td class="fs_res">Gary Anderson</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C 144</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">211</td>
-            <td class="fs_res" style="text-align: right">400</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">611</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">35</td>
-            <td class="fs_res">203</td>
-            <td class="fs_res">Claudia Meija </td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing T2C 136</td>
-            <td class="fs_res">Digifly USA/Wills Wing</td>
-            <td class="fs_res" style="text-align: right">210</td>
-            <td class="fs_res" style="text-align: right">378</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">588</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">36</td>
-            <td class="fs_res">109</td>
-            <td class="fs_res">Giovani Tagliari</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">BRA</td>
-            <td class="fs_res">Wills Wing T2C 154</td>
-            <td class="fs_res">Ecocleaner / Asa Delta in Rio</td>
-            <td class="fs_res" style="text-align: right">0</td>
-            <td class="fs_res" style="text-align: right">475</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">475</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">37</td>
-            <td class="fs_res">224</td>
-            <td class="fs_res">Adam Smith</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Wills Wing U2 145</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">270</td>
-            <td class="fs_res" style="text-align: right">104</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">374</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">38</td>
-            <td class="fs_res">202</td>
-            <td class="fs_res">Douglas Hale</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Moyes Gecko </td>
-            <td class="fs_res">Teton Hang Gliding </td>
-            <td class="fs_res" style="text-align: right">186</td>
-            <td class="fs_res" style="text-align: right">178</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">364</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">39</td>
-            <td class="fs_res">117</td>
-            <td class="fs_res">Thor Froh</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">USA</td>
-            <td class="fs_res">Aeros Combat</td>
-            <td class="fs_res">Morningside flight park , KHK</td>
-            <td class="fs_res" style="text-align: right">177</td>
-            <td class="fs_res" style="text-align: right">130</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">307</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">40</td>
-            <td class="fs_res">106</td>
-            <td class="fs_res">Ricardo Vassmer</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">VEN</td>
-            <td class="fs_res">Bautek Fizz SE</td>
-            <td class="fs_res">
-            </td>
-            <td class="fs_res" style="text-align: right">270</td>
-            <td class="fs_res" style="text-align: right">18</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">288</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">41</td>
-            <td class="fs_res">134</td>
-            <td class="fs_res">Mark Bourbonnais</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">CAN</td>
-            <td class="fs_res">Wills Wing T2C 136</td>
-            <td class="fs_res">Xtreme Adventures</td>
-            <td class="fs_res" style="text-align: right">207</td>
-            <td class="fs_res" style="text-align: right">33</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">240</td>
-          </tr>
-          <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
-            <td class="fs_res" align="right">42</td>
-            <td class="fs_res">127</td>
-            <td class="fs_res">Hugo Rodriguez</td>
-            <td class="fs_res">M</td>
-            <td class="fs_res">ARG</td>
-            <td class="fs_res">Aeros Combat GT 13.2</td>
-            <td class="fs_res">Odontologia Rodriguez</td>
-            <td class="fs_res" style="text-align: right">0</td>
-            <td class="fs_res" style="text-align: right">0</td>
-            <td class="fs_res" style="font-weight: bold; text-align: right">0</td>
-          </tr>
-        </table>
+         <thead>
+           <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+             <th class="fs_res">Task</th>
+             <th class="fs_res">Date</th>
+             <th class="fs_res">Distance</th>
+             <th class="fs_res">
+             Day Quality
+           </th>
+             <th class="fs_res"></th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+             <td class="fs_res">
+             T1 Task 1</td>
+             <td class="fs_res">2019-04-21 14:00  </td>
+             <td class="fs_res" align="right"> 100.0 km</td>
+             <td class="fs_res" align="right">99%</td>
+             <td class="fs_res">Race to Goal with 4 startgate(s)</td>
+           </tr>
+           <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+             <td class="fs_res">
+             T2 Task 2</td>
+             <td class="fs_res">2019-04-22 14:30  </td>
+             <td class="fs_res" align="right"> 105.7 km</td>
+             <td class="fs_res" align="right">100%</td>
+             <td class="fs_res">Race to Goal with 4 startgate(s)</td>
+           </tr>
+           <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+             <td class="fs_res">
+             T3 Task 3</td>
+             <td class="fs_res">2019-04-23 14:15  </td>
+             <td class="fs_res" align="right"> 88.4 km</td>
+             <td class="fs_res" align="right">100%</td>
+             <td class="fs_res">Race to Goal with 4 startgate(s)</td>
+           </tr>
+         </tbody>
+       </table><br><table class="fs_res">
+         <thead>
+           <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+             <th class="fs_res">#</th>
+             <th class="fs_res">Id</th>
+             <th class="fs_res">Name</th>
+             <th class="fs_res"></th>
+             <th class="fs_res">Nat</th>
+             <th class="fs_res">Glider</th>
+             <th class="fs_res">Sponsor</th>
+             <th class="fs_res">T 1</th>
+             <th class="fs_res">T 2</th>
+             <th class="fs_res">T 3</th>
+             <th class="fs_res">Total</th>
+           </tr>
+         </thead>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">1</td>
+           <td class="fs_res">223</td>
+           <td class="fs_res">Kevin Dutt</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Aeros Combat 13.5</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">988</td>
+           <td class="fs_res" style="text-align: right">947</td>
+           <td class="fs_res" style="text-align: right">901</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2836</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">2</td>
+           <td class="fs_res">222</td>
+           <td class="fs_res">Pedro L. Garcia</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T3 144</td>
+           <td class="fs_res">Wills Wing / Digiflly</td>
+           <td class="fs_res" style="text-align: right">987</td>
+           <td class="fs_res" style="text-align: right">896</td>
+           <td class="fs_res" style="text-align: right">944</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2827</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">3</td>
+           <td class="fs_res">137</td>
+           <td class="fs_res">Alvaro Figueiredo Sandoli</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">BRA</td>
+           <td class="fs_res">Wills Wing T3 144</td>
+           <td class="fs_res">Coronata/WillsWing/Rotor</td>
+           <td class="fs_res" style="text-align: right">953</td>
+           <td class="fs_res" style="text-align: right">861</td>
+           <td class="fs_res" style="text-align: right">944</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2758</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">4</td>
+           <td class="fs_res">113</td>
+           <td class="fs_res">Jonny Durand</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">AUS</td>
+           <td class="fs_res">Moyes RX 4 Pro</td>
+           <td class="fs_res">Red Bull, Moyes, Mitsubishi </td>
+           <td class="fs_res" style="text-align: right">902</td>
+           <td class="fs_res" style="text-align: right">905</td>
+           <td class="fs_res" style="text-align: right">862</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2669</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">5</td>
+           <td class="fs_res">132</td>
+           <td class="fs_res">Phill Bloom</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Moyes RX 3.5</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">945</td>
+           <td class="fs_res" style="text-align: right">857</td>
+           <td class="fs_res" style="text-align: right">852</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2654</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">6</td>
+           <td class="fs_res">139</td>
+           <td class="fs_res">Guilherme Sandoli</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">BRA</td>
+           <td class="fs_res">WillsWing T2C 136</td>
+           <td class="fs_res">Rotor Harness; WillsWing; Coronata</td>
+           <td class="fs_res" style="text-align: right">804</td>
+           <td class="fs_res" style="text-align: right">836</td>
+           <td class="fs_res" style="text-align: right">782</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2422</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">7</td>
+           <td class="fs_res">131</td>
+           <td class="fs_res">Bruce Barmakian</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Aeros Combat 12.7</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">957</td>
+           <td class="fs_res" style="text-align: right">886</td>
+           <td class="fs_res" style="text-align: right">573</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2416</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">8</td>
+           <td class="fs_res">126</td>
+           <td class="fs_res">Zac Majors</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T3 144</td>
+           <td class="fs_res">Wills Wing, Flytec</td>
+           <td class="fs_res" style="text-align: right">981</td>
+           <td class="fs_res" style="text-align: right">443</td>
+           <td class="fs_res" style="text-align: right">958</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2382</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">9</td>
+           <td class="fs_res">107</td>
+           <td class="fs_res">Marcelo Alexandre Menin</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C 154</td>
+           <td class="fs_res">www.parajets.com.br</td>
+           <td class="fs_res" style="text-align: right">954</td>
+           <td class="fs_res" style="text-align: right">864</td>
+           <td class="fs_res" style="text-align: right">483</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2301</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">10</td>
+           <td class="fs_res">141</td>
+           <td class="fs_res">Patrick Pannese</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T3 144</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">920</td>
+           <td class="fs_res" style="text-align: right">828</td>
+           <td class="fs_res" style="text-align: right">549</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2297</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">11</td>
+           <td class="fs_res">105</td>
+           <td class="fs_res">Akira Nagusa</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">JPN</td>
+           <td class="fs_res">Wills Wing T23144</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">972</td>
+           <td class="fs_res" style="text-align: right">828</td>
+           <td class="fs_res" style="text-align: right">375</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2175</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">12</td>
+           <td class="fs_res">102</td>
+           <td class="fs_res">Konstantin Lukyanov</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">RUS</td>
+           <td class="fs_res">Moyes RX 3.5</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">688</td>
+           <td class="fs_res" style="text-align: right">827</td>
+           <td class="fs_res" style="text-align: right">622</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2137</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">13</td>
+           <td class="fs_res">111</td>
+           <td class="fs_res">Fabiano Nahoum</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">BRA</td>
+           <td class="fs_res">Icaro Laminar 14.1</td>
+           <td class="fs_res">Viva ao Vento Fly Ranch / Wallaby</td>
+           <td class="fs_res" style="text-align: right">835</td>
+           <td class="fs_res" style="text-align: right">845</td>
+           <td class="fs_res" style="text-align: right">439</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2119</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">14</td>
+           <td class="fs_res">133</td>
+           <td class="fs_res">Raul Guerra</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">ECU</td>
+           <td class="fs_res">Aeros Combat C 12.7</td>
+           <td class="fs_res">www.guerragoes.com</td>
+           <td class="fs_res" style="text-align: right">890</td>
+           <td class="fs_res" style="text-align: right">807</td>
+           <td class="fs_res" style="text-align: right">421</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2118</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">15</td>
+           <td class="fs_res">101</td>
+           <td class="fs_res">Davis Straub</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T3 144</td>
+           <td class="fs_res">The Oz Report</td>
+           <td class="fs_res" style="text-align: right">798</td>
+           <td class="fs_res" style="text-align: right">704</td>
+           <td class="fs_res" style="text-align: right">545</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2047</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">16</td>
+           <td class="fs_res">123</td>
+           <td class="fs_res">Glen Volk</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Moyes RX 3.5</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">845</td>
+           <td class="fs_res" style="text-align: right">926</td>
+           <td class="fs_res" style="text-align: right">258</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">2029</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">17</td>
+           <td class="fs_res">114</td>
+           <td class="fs_res">Richard lovelace</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">GBR</td>
+           <td class="fs_res">Wills Wing T3 144 </td>
+           <td class="fs_res">Strensall honey bees.  </td>
+           <td class="fs_res" style="text-align: right">876</td>
+           <td class="fs_res" style="text-align: right">828</td>
+           <td class="fs_res" style="text-align: right">245</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1949</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">18</td>
+           <td class="fs_res">110</td>
+           <td class="fs_res">Luke Waters</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C 154</td>
+           <td class="fs_res">Teton Hang Gliding</td>
+           <td class="fs_res" style="text-align: right">827</td>
+           <td class="fs_res" style="text-align: right">753</td>
+           <td class="fs_res" style="text-align: right">343</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1923</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">19</td>
+           <td class="fs_res">104</td>
+           <td class="fs_res">Roger Irby</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C 154</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">946</td>
+           <td class="fs_res" style="text-align: right">178</td>
+           <td class="fs_res" style="text-align: right">778</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1902</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">20</td>
+           <td class="fs_res">136</td>
+           <td class="fs_res">Corinna Schwiegershausen</td>
+           <td class="fs_res">F</td>
+           <td class="fs_res">GER</td>
+           <td class="fs_res">Moyes RX 3 Pro</td>
+           <td class="fs_res">Red Bull, Moyes, icebreaker</td>
+           <td class="fs_res" style="text-align: right">926</td>
+           <td class="fs_res" style="text-align: right">0</td>
+           <td class="fs_res" style="text-align: right">846</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1772</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">21</td>
+           <td class="fs_res">122</td>
+           <td class="fs_res">Jeff Chipman</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Moyes RX 3.5</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">398</td>
+           <td class="fs_res" style="text-align: right">918</td>
+           <td class="fs_res" style="text-align: right">437</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1753</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">22</td>
+           <td class="fs_res">119</td>
+           <td class="fs_res">Philippe Michaud</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">CAN</td>
+           <td class="fs_res">Wills Wing T2C 144</td>
+           <td class="fs_res">Aviation Saint Paul</td>
+           <td class="fs_res" style="text-align: right">819</td>
+           <td class="fs_res" style="text-align: right">439</td>
+           <td class="fs_res" style="text-align: right">492</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1750</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">23</td>
+           <td class="fs_res">138</td>
+           <td class="fs_res">Mike Glennon</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">COL</td>
+           <td class="fs_res">Moyes RX 5</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">749</td>
+           <td class="fs_res" style="text-align: right">428</td>
+           <td class="fs_res" style="text-align: right">524</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1701</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">24</td>
+           <td class="fs_res">118</td>
+           <td class="fs_res">Peter Kelley</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Icaro Laminar 13.2</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">745</td>
+           <td class="fs_res" style="text-align: right">400</td>
+           <td class="fs_res" style="text-align: right">532</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1677</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">25</td>
+           <td class="fs_res">112</td>
+           <td class="fs_res">Wolfgang Siess</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">AUT</td>
+           <td class="fs_res">Wills Wing  T3 154</td>
+           <td class="fs_res">WillsWing,Rhythm of flight   </td>
+           <td class="fs_res" style="text-align: right">946</td>
+           <td class="fs_res" style="text-align: right">431</td>
+           <td class="fs_res" style="text-align: right">175</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1552</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">26</td>
+           <td class="fs_res">125</td>
+           <td class="fs_res">Kip Stone</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Moyes RX 5</td>
+           <td class="fs_res">none</td>
+           <td class="fs_res" style="text-align: right">670</td>
+           <td class="fs_res" style="text-align: right">459</td>
+           <td class="fs_res" style="text-align: right">401</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1530</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">27</td>
+           <td class="fs_res">140</td>
+           <td class="fs_res">Bruno Sandoli</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">BRA</td>
+           <td class="fs_res">Wills Wing T2C 144</td>
+           <td class="fs_res">Rotor harness/CORONATA</td>
+           <td class="fs_res" style="text-align: right">970</td>
+           <td class="fs_res" style="text-align: right">481</td>
+           <td class="fs_res" style="text-align: right">41</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1492</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">28</td>
+           <td class="fs_res">121</td>
+           <td class="fs_res">Larry Bunner</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C144</td>
+           <td class="fs_res">Dangerous Toys, WW</td>
+           <td class="fs_res" style="text-align: right">834</td>
+           <td class="fs_res" style="text-align: right">310</td>
+           <td class="fs_res" style="text-align: right">298</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1442</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">29</td>
+           <td class="fs_res">115</td>
+           <td class="fs_res">JD Guillemette</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Aeros Combat C 13.5</td>
+           <td class="fs_res">Sport Aviation Services</td>
+           <td class="fs_res" style="text-align: right">753</td>
+           <td class="fs_res" style="text-align: right">106</td>
+           <td class="fs_res" style="text-align: right">432</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1291</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">30</td>
+           <td class="fs_res">103</td>
+           <td class="fs_res">John Simon</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Aeros Combat C 12.7</td>
+           <td class="fs_res">US Aeros, Sport Aviation Svcs</td>
+           <td class="fs_res" style="text-align: right">990</td>
+           <td class="fs_res" style="text-align: right">120</td>
+           <td class="fs_res" style="text-align: right">93</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1203</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">31</td>
+           <td class="fs_res">128</td>
+           <td class="fs_res">Willy Dydo</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C 136</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">715</td>
+           <td class="fs_res" style="text-align: right">434</td>
+           <td class="fs_res" style="text-align: right">46</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1195</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">32</td>
+           <td class="fs_res">129</td>
+           <td class="fs_res">Robert Clarkson</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">CAN</td>
+           <td class="fs_res">Wills Wing T2C 154</td>
+           <td class="fs_res">Muller wind sports</td>
+           <td class="fs_res" style="text-align: right">366</td>
+           <td class="fs_res" style="text-align: right">245</td>
+           <td class="fs_res" style="text-align: right">528</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1139</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">33</td>
+           <td class="fs_res">203</td>
+           <td class="fs_res">Claudia Meija </td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C 136</td>
+           <td class="fs_res">Digifly USA/Wills Wing</td>
+           <td class="fs_res" style="text-align: right">210</td>
+           <td class="fs_res" style="text-align: right">378</td>
+           <td class="fs_res" style="text-align: right">500</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">1088</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">34</td>
+           <td class="fs_res">109</td>
+           <td class="fs_res">Giovani Tagliari</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">BRA</td>
+           <td class="fs_res">Wills Wing T2C 154</td>
+           <td class="fs_res">Ecocleaner / Asa Delta in Rio</td>
+           <td class="fs_res" style="text-align: right">0</td>
+           <td class="fs_res" style="text-align: right">475</td>
+           <td class="fs_res" style="text-align: right">480</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">955</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">35</td>
+           <td class="fs_res">130</td>
+           <td class="fs_res">Mick Howard</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Moyes RX 3.5</td>
+           <td class="fs_res">Joanne</td>
+           <td class="fs_res" style="text-align: right">308</td>
+           <td class="fs_res" style="text-align: right">421</td>
+           <td class="fs_res" style="text-align: right">195</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">924</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">36</td>
+           <td class="fs_res">224</td>
+           <td class="fs_res">Adam Smith</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing U2 145</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">270</td>
+           <td class="fs_res" style="text-align: right">104</td>
+           <td class="fs_res" style="text-align: right">331</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">705</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">37</td>
+           <td class="fs_res">116</td>
+           <td class="fs_res">Gary Anderson</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Wills Wing T2C 144</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">211</td>
+           <td class="fs_res" style="text-align: right">400</td>
+           <td class="fs_res" style="text-align: right">46</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">657</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">38</td>
+           <td class="fs_res">134</td>
+           <td class="fs_res">Mark Bourbonnais</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">CAN</td>
+           <td class="fs_res">Wills Wing T2C 136</td>
+           <td class="fs_res">Xtreme Adventures</td>
+           <td class="fs_res" style="text-align: right">207</td>
+           <td class="fs_res" style="text-align: right">33</td>
+           <td class="fs_res" style="text-align: right">413</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">653</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">39</td>
+           <td class="fs_res">202</td>
+           <td class="fs_res">Douglas Hale</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Moyes Gecko </td>
+           <td class="fs_res">Teton Hang Gliding </td>
+           <td class="fs_res" style="text-align: right">186</td>
+           <td class="fs_res" style="text-align: right">178</td>
+           <td class="fs_res" style="text-align: right">219</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">583</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">40</td>
+           <td class="fs_res">117</td>
+           <td class="fs_res">Thor Froh</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">USA</td>
+           <td class="fs_res">Aeros Combat</td>
+           <td class="fs_res">Morningside flight park , KHK</td>
+           <td class="fs_res" style="text-align: right">177</td>
+           <td class="fs_res" style="text-align: right">130</td>
+           <td class="fs_res" style="text-align: right">41</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">348</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">41</td>
+           <td class="fs_res">106</td>
+           <td class="fs_res">Ricardo Vassmer</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">VEN</td>
+           <td class="fs_res">Bautek Fizz SE</td>
+           <td class="fs_res">
+           </td>
+           <td class="fs_res" style="text-align: right">270</td>
+           <td class="fs_res" style="text-align: right">18</td>
+           <td class="fs_res" style="text-align: right">0</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">288</td>
+         </tr>
+         <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+           <td class="fs_res" align="right">42</td>
+           <td class="fs_res">127</td>
+           <td class="fs_res">Hugo Rodriguez</td>
+           <td class="fs_res">M</td>
+           <td class="fs_res">ARG</td>
+           <td class="fs_res">Aeros Combat GT 13.2</td>
+           <td class="fs_res">Odontologia Rodriguez</td>
+           <td class="fs_res" style="text-align: right">0</td>
+           <td class="fs_res" style="text-align: right">0</td>
+           <td class="fs_res" style="text-align: right">0</td>
+           <td class="fs_res" style="font-weight: bold; text-align: right">0</td>
+         </tr>
+       </table>
 </div>
 
 <hr>
@@ -2533,6 +2553,966 @@ text-shadow: 1px 1px #0066ff;
           </tr>
         </table>
 </div>
+
+<hr>
+
+<h2 class='collapsible'>Task 3</h2>
+<div class="content">
+  <table class="fs_res">
+            <thead>
+              <tr>
+                <th class="fs_res">No</th>
+                <th class="fs_res">Leg Dist.</th>
+                <th class="fs_res">Id</th>
+                <th class="fs_res">Radius</th>
+                <th class="fs_res">Open</th>
+                <th class="fs_res">Close</th>
+                <th class="fs_res">Coordinates</th>
+                <th class="fs_res">Altitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fs_res">1</td>
+                <td class="fs_res" align="right">0.0 km
+                </td>
+                <td class="fs_res">QUEST</td>
+                <td class="fs_res" align="right">400 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.53303 Lon: -81.84667</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+              <tr>
+                <td class="fs_res">2 SS</td>
+                <td class="fs_res" align="right">4.6 km
+                </td>
+                <td class="fs_res">QUEST</td>
+                <td class="fs_res" align="right">5000 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.53303 Lon: -81.84667</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+              <tr>
+                <td class="fs_res">3</td>
+                <td class="fs_res" align="right">17.0 km
+                </td>
+                <td class="fs_res">T47433</td>
+                <td class="fs_res" align="right">400 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.3764 Lon: -81.8233</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+              <tr>
+                <td class="fs_res">4</td>
+                <td class="fs_res" align="right">31.5 km
+                </td>
+                <td class="fs_res">WALABY</td>
+                <td class="fs_res" align="right">5000 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.25298 Lon: -81.68552</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+              <tr>
+                <td class="fs_res">5</td>
+                <td class="fs_res" align="right">53.5 km
+                </td>
+                <td class="fs_res">DSROK</td>
+                <td class="fs_res" align="right">400 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.25917 Lon: -81.95855</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+              <tr>
+                <td class="fs_res">6</td>
+                <td class="fs_res" align="right">71.5 km
+                </td>
+                <td class="fs_res">T47433</td>
+                <td class="fs_res" align="right">400 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.3764 Lon: -81.8233</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+              <tr>
+                <td class="fs_res">7 ES</td>
+                <td class="fs_res" align="right">88.4 km
+                </td>
+                <td class="fs_res">QUEST</td>
+                <td class="fs_res" align="right">400 m
+              </td>
+                <td class="fs_res">14:15</td>
+                <td class="fs_res">20:00</td>
+                <td class="fs_res">
+                    Lat: 28.53303 Lon: -81.84667</td>
+                <td class="fs_res" align="right">37 m
+              </td>
+              </tr>
+            </tbody>
+          </table>StartGate(s): 14:15, 14:35, 14:55, 15:15<br><br><table class="fs_res">
+            <thead>
+              <tr>
+                <th class="fs_res">#</th>
+                <th class="fs_res">Id</th>
+                <th class="fs_res">Name</th>
+                <th class="fs_res"></th>
+                <th class="fs_res">Nat</th>
+                <th class="fs_res">Glider</th>
+                <th class="fs_res">Sponsor</th>
+                <th class="fs_res">SS</th>
+                <th class="fs_res">ES</th>
+                <th class="fs_res">Time</th>
+                <th class="fs_res">km/h</th>
+                <th class="fs_res">Distance</th>
+                <th class="fs_res">
+          Dist.<br>Points
+        </th>
+                <th class="fs_res">
+            Lead.<br>Points
+          </th>
+                <th class="fs_res">
+          Time<br>Points
+        </th>
+                <th class="fs_res">
+            Arr.<br>Time<br>Points
+          </th>
+                <th class="fs_res">Total</th>
+              </tr>
+            </thead>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">1</td>
+              <td class="fs_res">126</td>
+              <td class="fs_res">Zac Majors</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T3 144</td>
+              <td class="fs_res">Wills Wing, Flytec</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:15:29</td>
+              <td class="fs_res">02:40:29</td>
+              <td class="fs_res">31.3</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">67.4</td>
+              <td class="fs_res" align="right">235.7</td>
+              <td class="fs_res" align="right">49.3</td>
+              <td class="fs_res" align="right">958</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">2</td>
+              <td class="fs_res">222</td>
+              <td class="fs_res">Pedro L. Garcia</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T3 144</td>
+              <td class="fs_res">Wills Wing / Digiflly</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:15:45</td>
+              <td class="fs_res">02:40:45</td>
+              <td class="fs_res">31.3</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">55.1</td>
+              <td class="fs_res" align="right">234.4</td>
+              <td class="fs_res" align="right">48.9</td>
+              <td class="fs_res" align="right">944</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">2</td>
+              <td class="fs_res">137</td>
+              <td class="fs_res">Alvaro Figueiredo Sandoli</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">BRA</td>
+              <td class="fs_res">Wills Wing T3 144</td>
+              <td class="fs_res">Coronata/WillsWing/Rotor</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:15:46</td>
+              <td class="fs_res">02:40:46</td>
+              <td class="fs_res">31.3</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">55.2</td>
+              <td class="fs_res" align="right">234.3</td>
+              <td class="fs_res" align="right">48.9</td>
+              <td class="fs_res" align="right">944</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">4</td>
+              <td class="fs_res">223</td>
+              <td class="fs_res">Kevin Dutt</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Aeros Combat 13.5</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">17:50:04</td>
+              <td class="fs_res">02:35:04</td>
+              <td class="fs_res">32.4</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">8.3</td>
+              <td class="fs_res" align="right">276.2</td>
+              <td class="fs_res" align="right">11.5</td>
+              <td class="fs_res" align="right">901</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">5</td>
+              <td class="fs_res">113</td>
+              <td class="fs_res">Jonny Durand</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">AUS</td>
+              <td class="fs_res">Moyes RX 4 Pro</td>
+              <td class="fs_res">Red Bull, Moyes, Mitsubishi </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:31:35</td>
+              <td class="fs_res">02:56:35</td>
+              <td class="fs_res">28.5</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">54.7</td>
+              <td class="fs_res" align="right">174.6</td>
+              <td class="fs_res" align="right">27.3</td>
+              <td class="fs_res" align="right">862</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">6</td>
+              <td class="fs_res">132</td>
+              <td class="fs_res">Phill Bloom</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Moyes RX 3.5</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:33:54</td>
+              <td class="fs_res">02:58:54</td>
+              <td class="fs_res">28.1</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">54.3</td>
+              <td class="fs_res" align="right">167.5</td>
+              <td class="fs_res" align="right">24.8</td>
+              <td class="fs_res" align="right">852</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">7</td>
+              <td class="fs_res">136</td>
+              <td class="fs_res">Corinna Schwiegershausen</td>
+              <td class="fs_res">F</td>
+              <td class="fs_res">GER</td>
+              <td class="fs_res">Moyes RX 3 Pro</td>
+              <td class="fs_res">Red Bull, Moyes, icebreaker</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:34:28</td>
+              <td class="fs_res">02:59:28</td>
+              <td class="fs_res">28.0</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">51.0</td>
+              <td class="fs_res" align="right">165.7</td>
+              <td class="fs_res" align="right">24.2</td>
+              <td class="fs_res" align="right">846</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">8</td>
+              <td class="fs_res">139</td>
+              <td class="fs_res">Guilherme Sandoli</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">BRA</td>
+              <td class="fs_res">WillsWing T2C 136</td>
+              <td class="fs_res">Rotor Harness; WillsWing; Coronata</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">17:50:02</td>
+              <td class="fs_res">03:15:02</td>
+              <td class="fs_res">25.8</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">42.5</td>
+              <td class="fs_res" align="right">122.7</td>
+              <td class="fs_res" align="right">11.5</td>
+              <td class="fs_res" align="right">782</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">9</td>
+              <td class="fs_res">104</td>
+              <td class="fs_res">Roger Irby</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C 154</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:15:00</td>
+              <td class="fs_res">17:44:18</td>
+              <td class="fs_res">03:29:18</td>
+              <td class="fs_res">24.0</td>
+              <td class="fs_res" align="right">88.43</td>
+              <td class="fs_res" align="right">605.4</td>
+              <td class="fs_res" align="right">69.1</td>
+              <td class="fs_res" align="right">88.1</td>
+              <td class="fs_res" align="right">15.5</td>
+              <td class="fs_res" align="right">778</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">10</td>
+              <td class="fs_res">102</td>
+              <td class="fs_res">Konstantin Lukyanov</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">RUS</td>
+              <td class="fs_res">Moyes RX 3.5</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">81.69</td>
+              <td class="fs_res" align="right">582.3</td>
+              <td class="fs_res" align="right">39.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">622</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">11</td>
+              <td class="fs_res">131</td>
+              <td class="fs_res">Bruce Barmakian</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Aeros Combat 12.7</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">79.69</td>
+              <td class="fs_res" align="right">573.2</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">573</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">12</td>
+              <td class="fs_res">141</td>
+              <td class="fs_res">Patrick Pannese</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T3 144</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">75.54</td>
+              <td class="fs_res" align="right">549.2</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">549</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">13</td>
+              <td class="fs_res">101</td>
+              <td class="fs_res">Davis Straub</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T3 144</td>
+              <td class="fs_res">The Oz Report</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">74.86</td>
+              <td class="fs_res" align="right">544.5</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">545</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">14</td>
+              <td class="fs_res">118</td>
+              <td class="fs_res">Peter Kelley</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Icaro Laminar 13.2</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:55:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">73.29</td>
+              <td class="fs_res" align="right">531.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">532</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">15</td>
+              <td class="fs_res">129</td>
+              <td class="fs_res">Robert Clarkson</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">CAN</td>
+              <td class="fs_res">Wills Wing T2C 154</td>
+              <td class="fs_res">Muller wind sports</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">72.87</td>
+              <td class="fs_res" align="right">528.0</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">528</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">16</td>
+              <td class="fs_res">138</td>
+              <td class="fs_res">Mike Glennon</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">COL</td>
+              <td class="fs_res">Moyes RX 5</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">71.32</td>
+              <td class="fs_res" align="right">513.6</td>
+              <td class="fs_res" align="right">10.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">524</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">17</td>
+              <td class="fs_res">203</td>
+              <td class="fs_res">Claudia Meija </td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C 136</td>
+              <td class="fs_res">Digifly USA/Wills Wing</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">68.32</td>
+              <td class="fs_res" align="right">484.3</td>
+              <td class="fs_res" align="right">15.3</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">500</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">18</td>
+              <td class="fs_res">119</td>
+              <td class="fs_res">Philippe Michaud</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">CAN</td>
+              <td class="fs_res">Wills Wing T2C 144</td>
+              <td class="fs_res">Aviation Saint Paul</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">69.03</td>
+              <td class="fs_res" align="right">491.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">492</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">19</td>
+              <td class="fs_res">107</td>
+              <td class="fs_res">Marcelo Alexandre Menin</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C 154</td>
+              <td class="fs_res">www.parajets.com.br</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">68.20</td>
+              <td class="fs_res" align="right">482.9</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">483</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">20</td>
+              <td class="fs_res">109</td>
+              <td class="fs_res">Giovani Tagliari</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">BRA</td>
+              <td class="fs_res">Wills Wing T2C 154</td>
+              <td class="fs_res">Ecocleaner / Asa Delta in Rio</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">67.94</td>
+              <td class="fs_res" align="right">479.5</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">480</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">21</td>
+              <td class="fs_res">111</td>
+              <td class="fs_res">Fabiano Nahoum</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">BRA</td>
+              <td class="fs_res">Icaro Laminar 14.1</td>
+              <td class="fs_res">Viva ao Vento Fly Ranch / Wallaby</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">61.83</td>
+              <td class="fs_res" align="right">408.4</td>
+              <td class="fs_res" align="right">30.7</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">439</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">22</td>
+              <td class="fs_res">122</td>
+              <td class="fs_res">Jeff Chipman</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Moyes RX 3.5</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">61.81</td>
+              <td class="fs_res" align="right">408.2</td>
+              <td class="fs_res" align="right">28.9</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">437</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">23</td>
+              <td class="fs_res">115</td>
+              <td class="fs_res">JD Guillemette</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Aeros Combat C 13.5</td>
+              <td class="fs_res">Sport Aviation Services</td>
+              <td class="fs_res">14:55:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">64.15</td>
+              <td class="fs_res" align="right">432.3</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">432</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">24</td>
+              <td class="fs_res">133</td>
+              <td class="fs_res">Raul Guerra</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">ECU</td>
+              <td class="fs_res">Aeros Combat C 12.7</td>
+              <td class="fs_res">www.guerragoes.com</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">61.82</td>
+              <td class="fs_res" align="right">408.3</td>
+              <td class="fs_res" align="right">12.9</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">421</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">25</td>
+              <td class="fs_res">134</td>
+              <td class="fs_res">Mark Bourbonnais</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">CAN</td>
+              <td class="fs_res">Wills Wing T2C 136</td>
+              <td class="fs_res">Xtreme Adventures</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">62.27</td>
+              <td class="fs_res" align="right">412.9</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">413</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">26</td>
+              <td class="fs_res">125</td>
+              <td class="fs_res">Kip Stone</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Moyes RX 5</td>
+              <td class="fs_res">none</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">61.28</td>
+              <td class="fs_res" align="right">400.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">401</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">27</td>
+              <td class="fs_res">105</td>
+              <td class="fs_res">Akira Nagusa</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">JPN</td>
+              <td class="fs_res">Wills Wing T23144</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">59.46</td>
+              <td class="fs_res" align="right">374.5</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">375</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">28</td>
+              <td class="fs_res">110</td>
+              <td class="fs_res">Luke Waters</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C 154</td>
+              <td class="fs_res">Teton Hang Gliding</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">56.76</td>
+              <td class="fs_res" align="right">342.7</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">343</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">29</td>
+              <td class="fs_res">224</td>
+              <td class="fs_res">Adam Smith</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing U2 145</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">54.93</td>
+              <td class="fs_res" align="right">319.6</td>
+              <td class="fs_res" align="right">11.6</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">331</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">30</td>
+              <td class="fs_res">121</td>
+              <td class="fs_res">Larry Bunner</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C144</td>
+              <td class="fs_res">Dangerous Toys, WW</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">51.74</td>
+              <td class="fs_res" align="right">286.8</td>
+              <td class="fs_res" align="right">10.9</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">298</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">31</td>
+              <td class="fs_res">123</td>
+              <td class="fs_res">Glen Volk</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Moyes RX 3.5</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">45.40</td>
+              <td class="fs_res" align="right">245.7</td>
+              <td class="fs_res" align="right">12.4</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">258</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">32</td>
+              <td class="fs_res">114</td>
+              <td class="fs_res">Richard lovelace</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">GBR</td>
+              <td class="fs_res">Wills Wing T3 144 </td>
+              <td class="fs_res">Strensall honey bees.  </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">44.80</td>
+              <td class="fs_res" align="right">242.4</td>
+              <td class="fs_res" align="right">2.9</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">245</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">33</td>
+              <td class="fs_res">202</td>
+              <td class="fs_res">Douglas Hale</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Moyes Gecko </td>
+              <td class="fs_res">Teton Hang Gliding </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">41.19</td>
+              <td class="fs_res" align="right">219.4</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">219</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">34</td>
+              <td class="fs_res">130</td>
+              <td class="fs_res">Mick Howard</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Moyes RX 3.5</td>
+              <td class="fs_res">Joanne</td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">37.66</td>
+              <td class="fs_res" align="right">194.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">195</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">35</td>
+              <td class="fs_res">112</td>
+              <td class="fs_res">Wolfgang Siess</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">AUT</td>
+              <td class="fs_res">Wills Wing  T3 154</td>
+              <td class="fs_res">WillsWing,Rhythm of flight   </td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">34.75</td>
+              <td class="fs_res" align="right">175.1</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">175</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">36</td>
+              <td class="fs_res">103</td>
+              <td class="fs_res">John Simon</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Aeros Combat C 12.7</td>
+              <td class="fs_res">US Aeros, Sport Aviation Svcs</td>
+              <td class="fs_res">14:35:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">16.67</td>
+              <td class="fs_res" align="right">93.4</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">93</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">37</td>
+              <td class="fs_res">128</td>
+              <td class="fs_res">Willy Dydo</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C 136</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">5.88</td>
+              <td class="fs_res" align="right">46.2</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">46</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">37</td>
+              <td class="fs_res">116</td>
+              <td class="fs_res">Gary Anderson</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Wills Wing T2C 144</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">15:15:00</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">5.78</td>
+              <td class="fs_res" align="right">45.8</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">46</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">39</td>
+              <td class="fs_res">117</td>
+              <td class="fs_res">Thor Froh</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">USA</td>
+              <td class="fs_res">Aeros Combat</td>
+              <td class="fs_res">Morningside flight park , KHK</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">5.00</td>
+              <td class="fs_res" align="right">41.4</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">41</td>
+            </tr>
+            <tr class="fs_res_res_row" onmouseover="this.className = 'hover'" onmouseout="this.className='fs_res_res_row'">
+              <td class="fs_res" align="right">39</td>
+              <td class="fs_res">140</td>
+              <td class="fs_res">Bruno Sandoli</td>
+              <td class="fs_res">M</td>
+              <td class="fs_res">BRA</td>
+              <td class="fs_res">Wills Wing T2C 144</td>
+              <td class="fs_res">Rotor harness/CORONATA</td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res">
+              </td>
+              <td class="fs_res"></td>
+              <td class="fs_res"></td>
+              <td class="fs_res" align="right">5.00</td>
+              <td class="fs_res" align="right">41.4</td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right"></td>
+              <td class="fs_res" align="right">41</td>
+            </tr>
+          </table>
+
+</div>
+
+
 <hr>
 
 </div>
