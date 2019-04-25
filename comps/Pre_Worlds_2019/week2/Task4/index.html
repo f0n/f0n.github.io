@@ -48,8 +48,8 @@ text-shadow: 1px 1px #0066ff;
 }
 .ALL {margin: auto;}
 .map{height: 700px;}
-  
-  .content {
+
+.content {
   display: none;
 }
 
@@ -288,11 +288,11 @@ return [style];
 });
 
 var colors = {
-'Rod Regier': 'rgba(0, 0, 255, 0.7)',
-'Mitch Sorby': 'rgba(0, 215, 255, 0.7)',
-'Ken Millard': 'rgba(153, 153, 0, 0.95)',
-'Richard Westmoreland': 'rgba(255, 0, 0, 0.7)',
-'Tim Delaney': 'rgba(153, 51, 255, 0.7)'
+  'Jonny Durand': 'rgba(0, 0, 255, 0.7)',
+  'Marcelo Alexandre Menin': 'rgba(0, 215, 255, 0.7)',
+  'Zac Majors': 'rgba(153, 153, 0, 0.95)',
+  'Philippe Michaud': 'rgba(255, 0, 0, 0.7)',
+  'Alvaro Figueiredo Sandoli': 'rgba(153, 51, 255, 0.7)'
 };
 var styleCache = {};
 var styleFunction = function(feature, resolution) {
@@ -311,11 +311,11 @@ return styleArray;
 };
 var vectorSource = new ol.source.Vector();
 var igcUrls = [
-'Rod Regier.20190423-170000.207.igc',
-'Mitch Sorby.20190423-170000.203.igc',
-'Ken Millard.20190423-170000.208.igc',
-'Richard Westmoreland.20190423-170000.211.igc',
-'Tim Delaney.20190423-170000.204.igc'
+'Jonny Durand.20190424-170000.113.igc',
+'Marcelo Alexandre Menin.20190424-170000.107.igc',
+'Zac Majors.20190424-170000.126.igc',
+'Philippe Michaud.20190424-170000.119.igc',
+'Alvaro Figueiredo Sandoli.20190424-170000.137.igc'
 ];
 var vectorLineLayer = new ol.layer.Vector({
 source: vectorLine,
