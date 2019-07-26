@@ -1,0 +1,28 @@
+table {
+
+}
+
+
+/*table, th, td {
+  border: 1px solid black;
+}*/
+
+  td {
+    border: solid 1px #cccccc;
+    vertical-align: center;
+    padding: 15px;
+
+}
+
+.content {
+  display: none;
+}
+
+.collapsible{
+  outline: none;
+}
+
+.sponsor {
+  width: 300px;
+
+}
