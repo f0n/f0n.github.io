@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Big Spring 2019 Waypoints</title>
+<script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<link rel='stylesheet' href='https://openlayers.org/en/v3.10.1/css/ol.css' type='text/css'>
+<script src='https://openlayers.org/en/v5.3.0/build/ol.js'></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<link rel="stylesheet" href='../css/style.css'>
+
+<style>
+html, body {
+height: 100%;
+}
+#legende{
+position: absolute;
+z-index: 100000;
+margin-left: 3%;
+width: 35%;
+}
+#cuhg_logo{
+width: 50%;
+margin-left: -3%;
+margin-top: 3%;
+}
+#Task {
+Font -family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+font-size: 12px;
+}
+#Task td, #Task th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+#Task tr:nth-child(even){background-color: #f2f2f2;}
+#Task tr:nth-child(odd){background-color: #ffffff;}
+#Task tr:hover {background-color: #ddd;}
+#Task th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #4CAF50;
+color: white;
+}
+h2 {
+text-shadow: 1px 1px #0066ff;
+}
+.ALL {margin: auto;}
+
+.map{
+  height: 800px;
+
+
+}
+
+.wpts {
+  font-size: 16px;
+	}
+</style>
+</head>
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button"><b>2019</b> Big Spring Waypoints</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="../index.html#tasks" class="w3-bar-item w3-button">Tasks</a>
+        <a href="../index.html#results" class="w3-bar-item w3-button">Results</a>
+        <a href="../index.html#photos" class="w3-bar-item w3-button">Photos</a>
+        <a href="../index.html#videos" class="w3-bar-item w3-button">Videos</a>
+        <a href="../index.html#links" class="w3-bar-item w3-button">Links</a>
+      </div>
+    </div>
+  </div>
+
+	<div class='ALL'>
+<div class='container-fluid'>
+<div class='row-fluid'>
+<div class='span12'>
+<div id='map' class='map'>
+<div id='legende'>
+<div class='udiv_legende' id='legende_1'>
+<div id='Task'>
+
+</div>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<script>
+var BIGSPR = new ol.geom.Circle(ol.proj.transform([-101.5249 , 32.2176 ], 'EPSG:4326', 'EPSG:3857'), 3000);
+var ACKERL = new ol.geom.Circle(ol.proj.transform([-101.7160333 , 32.5264333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var ANDY = new ol.geom.Circle(ol.proj.transform([-102.5259 , 32.3249 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var AVENGE = new ol.geom.Circle(ol.proj.transform([-100.4716667 , 32.4738833 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var BEGGS = new ol.geom.Circle(ol.proj.transform([-101.03195 , 33.0861166 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var BIGLK = new ol.geom.Circle(ol.proj.transform([-101.4735 , 31.196 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var BROWN = new ol.geom.Circle(ol.proj.transform([-102.195 , 33.1745 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var CHILD = new ol.geom.Circle(ol.proj.transform([-100.2885 , 34.4287 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var CLARED = new ol.geom.Circle(ol.proj.transform([-100.8697 , 34.9093 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var CLAUDE = new ol.geom.Circle(ol.proj.transform([-101.3935 , 35.1053 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var CLOVIS = new ol.geom.Circle(ol.proj.transform([-103.0887 , 34.4256 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var COCHRN = new ol.geom.Circle(ol.proj.transform([-102.734 , 33.7316 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var COLORA = new ol.geom.Circle(ol.proj.transform([-100.8104 , 32.4219 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var CROSBY = new ol.geom.Circle(ol.proj.transform([-101.2405 , 33.6216 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var DENVER = new ol.geom.Circle(ol.proj.transform([-102.8392 , 32.9779 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var EAST10 = new ol.geom.Circle(ol.proj.transform([-101.4193667 , 32.2214667 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var EAST15 = new ol.geom.Circle(ol.proj.transform([-101.3641167 , 32.2229167 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var EAST5K = new ol.geom.Circle(ol.proj.transform([-101.47185 , 32.2212 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var ELK = new ol.geom.Circle(ol.proj.transform([-99.397 , 35.4283 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var FISH = new ol.geom.Circle(ol.proj.transform([-100.4131 , 32.8238 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var FLOYDA = new ol.geom.Circle(ol.proj.transform([-101.331 , 33.9993 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var FORD = new ol.geom.Circle(ol.proj.transform([-99.7148 , 33.9779 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var GAIL = new ol.geom.Circle(ol.proj.transform([-101.5261 , 32.7887 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var GAINES = new ol.geom.Circle(ol.proj.transform([-102.6465 , 32.671 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var GARZA = new ol.geom.Circle(ol.proj.transform([-101.3414 , 33.199 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var GUTHRI = new ol.geom.Circle(ol.proj.transform([-100.3494 , 33.6361 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var HALE = new ol.geom.Circle(ol.proj.transform([-101.7171 , 34.165 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var HASKEL = new ol.geom.Circle(ol.proj.transform([-99.7197 , 33.1862 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var HOBBS = new ol.geom.Circle(ol.proj.transform([-103.217 , 32.7719 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var JAYTON = new ol.geom.Circle(ol.proj.transform([-100.5713833 , 33.24055 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var KERMIT = new ol.geom.Circle(ol.proj.transform([-103.0832167 , 31.8555333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var KNOX = new ol.geom.Circle(ol.proj.transform([-99.8171 , 33.4357 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var LAMESA = new ol.geom.Circle(ol.proj.transform([-101.9192 , 32.7592 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var LEE = new ol.geom.Circle(ol.proj.transform([-100.5416 , 31.876 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var LENORA = new ol.geom.Circle(ol.proj.transform([-101.8715167 , 32.3041167 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var LEVEL = new ol.geom.Circle(ol.proj.transform([-102.3712 , 33.5589 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var LITTLE = new ol.geom.Circle(ol.proj.transform([-102.3837 , 33.9203 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var LUBBOK = new ol.geom.Circle(ol.proj.transform([-101.8232 , 33.6637 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var MABEE = new ol.geom.Circle(ol.proj.transform([-102.1716667 , 32.20555 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var MIDLAN = new ol.geom.Circle(ol.proj.transform([-102.2021 , 31.9427 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var MULE = new ol.geom.Circle(ol.proj.transform([-102.6458 , 34.1865 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var OZONA = new ol.geom.Circle(ol.proj.transform([-101.2031 , 30.7351 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var PARMA = new ol.geom.Circle(ol.proj.transform([-100.9975 , 35.6129 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var RANKIN = new ol.geom.Circle(ol.proj.transform([-101.9538 , 31.2229 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var ROARIN = new ol.geom.Circle(ol.proj.transform([-100.8458 , 33.9333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var ROY = new ol.geom.Circle(ol.proj.transform([-101.1252833 , 33.0858333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var SEAGRV = new ol.geom.Circle(ol.proj.transform([-102.5397167 , 32.9616667 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var SILVER = new ol.geom.Circle(ol.proj.transform([-101.2957 , 34.4655 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var SLATON = new ol.geom.Circle(ol.proj.transform([-101.6691667 , 33.4861166 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var STAMPS = new ol.geom.Circle(ol.proj.transform([-101.3862 , 35.3319 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var STAN = new ol.geom.Circle(ol.proj.transform([-101.8219 , 32.1698 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var STONE = new ol.geom.Circle(ol.proj.transform([-100.1963 , 33.1685 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var TBAR = new ol.geom.Circle(ol.proj.transform([-101.8234 , 33.1743 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var TIPTON = new ol.geom.Circle(ol.proj.transform([-99.1699 , 34.4555 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var TOWN = new ol.geom.Circle(ol.proj.transform([-101.8117 , 33.4834 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var TRAVIS = new ol.geom.Circle(ol.proj.transform([-100.865 , 33.4516667 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var WEST10 = new ol.geom.Circle(ol.proj.transform([-101.6316667 , 32.2137334 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var WEST15 = new ol.geom.Circle(ol.proj.transform([-101.6832 , 32.212 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var WEST5K = new ol.geom.Circle(ol.proj.transform([-101.5771666 , 32.21625 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var WINSTN = new ol.geom.Circle(ol.proj.transform([-100.9506 , 32.6977 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var YOAKUM = new ol.geom.Circle(ol.proj.transform([-102.8333 , 33.2133 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _10T = new ol.geom.Circle(ol.proj.transform([-101.7630834 , 32.2833 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _11T = new ol.geom.Circle(ol.proj.transform([-101.4916833 , 32.5401 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _12T = new ol.geom.Circle(ol.proj.transform([-101.3392333 , 32.4055167 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _13T = new ol.geom.Circle(ol.proj.transform([-101.5831667 , 32.4150667 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _14T = new ol.geom.Circle(ol.proj.transform([-101.3916833 , 32.08615 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _1T = new ol.geom.Circle(ol.proj.transform([-101.64885 , 32.76045 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _2100KM = new ol.geom.Circle(ol.proj.transform([-101.7677667 , 32.0153833 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _251KM = new ol.geom.Circle(ol.proj.transform([-101.46505 , 32.2923333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _252KM = new ol.geom.Circle(ol.proj.transform([-101.56135 , 32.2910167 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _25T = new ol.geom.Circle(ol.proj.transform([-101.5188167 , 32.3555666 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _27T = new ol.geom.Circle(ol.proj.transform([-101.2653167 , 32.44505 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _28T = new ol.geom.Circle(ol.proj.transform([-101.88565 , 32.4992667 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _2T = new ol.geom.Circle(ol.proj.transform([-101.2895667 , 32.5569333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _31T = new ol.geom.Circle(ol.proj.transform([-101.4456167 , 32.7702167 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _32T = new ol.geom.Circle(ol.proj.transform([-101.48105 , 31.8639333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _39T = new ol.geom.Circle(ol.proj.transform([-101.7095834 , 31.8890833 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _3T = new ol.geom.Circle(ol.proj.transform([-101.0721333 , 32.5274 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _40T = new ol.geom.Circle(ol.proj.transform([-102.1707833 , 32.3202166 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _48T = new ol.geom.Circle(ol.proj.transform([-102.0204 , 32.5546834 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _4T = new ol.geom.Circle(ol.proj.transform([-101.2123834 , 32.7486 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _50KM = new ol.geom.Circle(ol.proj.transform([-101.6935334 , 32.2719666 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _51T = new ol.geom.Circle(ol.proj.transform([-100.9918833 , 31.8364 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _53T = new ol.geom.Circle(ol.proj.transform([-101.91595 , 32.5975333 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _56T = new ol.geom.Circle(ol.proj.transform([-102.1232167 , 32.9270667 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _59T = new ol.geom.Circle(ol.proj.transform([-101.4916833 , 32.2640834 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _5T = new ol.geom.Circle(ol.proj.transform([-101.01515 , 32.1713834 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _6T = new ol.geom.Circle(ol.proj.transform([-101.3704167 , 32.2746166 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _7T = new ol.geom.Circle(ol.proj.transform([-101.2379834 , 32.30485 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _8T = new ol.geom.Circle(ol.proj.transform([-101.0625334 , 32.3429666 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+var _9T = new ol.geom.Circle(ol.proj.transform([-101.22165 , 32.1446 ], 'EPSG:4326', 'EPSG:3857'), 1000);
+
+
+
+
+
+var points = [
+  [-101.5249,32.2176],
+  [-101.7160333,32.5264333],
+  [-102.5259,32.3249],
+  [-100.4716667,32.4738833],
+  [-101.03195,33.0861166],
+  [-101.4735,31.196],
+  [-102.195,33.1745],
+  [-100.2885,34.4287],
+  [-100.8697,34.9093],
+  [-101.3935,35.1053],
+  [-103.0887,34.4256],
+  [-102.734,33.7316],
+  [-100.8104,32.4219],
+  [-101.2405,33.6216],
+  [-102.8392,32.9779],
+  [-101.4193667,32.2214667],
+  [-101.3641167,32.2229167],
+  [-101.47185,32.2212],
+  [-99.397,35.4283],
+  [-100.4131,32.8238],
+  [-101.331,33.9993],
+  [-99.7148,33.9779],
+  [-101.5261,32.7887],
+  [-102.6465,32.671],
+  [-101.3414,33.199],
+  [-100.3494,33.6361],
+  [-101.7171,34.165],
+  [-99.7197,33.1862],
+  [-103.217,32.7719],
+  [-100.5713833,33.24055],
+  [-103.0832167,31.8555333],
+  [-99.8171,33.4357],
+  [-101.9192,32.7592],
+  [-100.5416,31.876],
+  [-101.8715167,32.3041167],
+  [-102.3712,33.5589],
+  [-102.3837,33.9203],
+  [-101.8232,33.6637],
+  [-102.1716667,32.20555],
+  [-102.2021,31.9427],
+  [-102.6458,34.1865],
+  [-101.2031,30.7351],
+  [-100.9975,35.6129],
+  [-101.9538,31.2229],
+  [-100.8458,33.9333],
+  [-101.1252833,33.0858333],
+  [-102.5397167,32.9616667],
+  [-101.2957,34.4655],
+  [-101.6691667,33.4861166],
+  [-101.3862,35.3319],
+  [-101.8219,32.1698],
+  [-100.1963,33.1685],
+  [-101.8234,33.1743],
+  [-99.1699,34.4555],
+  [-101.8117,33.4834],
+  [-100.865,33.4516667],
+  [-101.6316667,32.2137334],
+  [-101.6832,32.212],
+  [-101.5771666,32.21625],
+  [-100.9506,32.6977],
+  [-102.8333,33.2133],
+  [-101.7630834,32.2833],
+  [-101.4916833,32.5401],
+  [-101.3392333,32.4055167],
+  [-101.5831667,32.4150667],
+  [-101.3916833,32.08615],
+  [-101.64885,32.76045],
+  [-101.7677667,32.0153833],
+  [-101.46505,32.2923333],
+  [-101.56135,32.2910167],
+  [-101.5188167,32.3555666],
+  [-101.2653167,32.44505],
+  [-101.88565,32.4992667],
+  [-101.2895667,32.5569333],
+  [-101.4456167,32.7702167],
+  [-101.48105,31.8639333],
+  [-101.7095834,31.8890833],
+  [-101.0721333,32.5274],
+  [-102.1707833,32.3202166],
+  [-102.0204,32.5546834],
+  [-101.2123834,32.7486],
+  [-101.6935334,32.2719666],
+  [-100.9918833,31.8364],
+  [-101.91595,32.5975333],
+  [-102.1232167,32.9270667],
+  [-101.4916833,32.2640834],
+  [-101.01515,32.1713834],
+  [-101.3704167,32.2746166],
+  [-101.2379834,32.30485],
+  [-101.0625334,32.3429666],
+  [-101.22165,32.1446],
+
+
+];
+for (var i = 0; i < points.length; i++) {
+    points[i] = ol.proj.transform(points[i], 'EPSG:4326', 'EPSG:3857');
+    }
+    var featureLine = new ol.Feature({
+    geometry: new ol.geom.LineString(points)
+    });
+var vectorLine = new ol.source.Vector({});
+vectorLine.addFeature(featureLine);
+var vectorLineLayer = new ol.layer.Vector({
+    source: vectorLine,
+    style: new ol.style.Style({
+    fill: new ol.style.Fill({ color: '#00FF00', weight: 4 }),
+    stroke: new ol.style.Stroke({ color: '#00FF00', width: 2 })
+    })
+    });
+    var BIGSPRfeature = new ol.Feature({geometry: BIGSPR, label: 'BIGSPR'});
+    var ACKERLfeature = new ol.Feature({geometry: ACKERL, label: 'ACKERL'});
+    var ANDYfeature = new ol.Feature({geometry: ANDY, label: 'ANDY'});
+    var AVENGEfeature = new ol.Feature({geometry: AVENGE, label: 'AVENGE'});
+    var BEGGSfeature = new ol.Feature({geometry: BEGGS, label: 'BEGGS'});
+    var BIGLKfeature = new ol.Feature({geometry: BIGLK, label: 'BIGLK'});
+    var BROWNfeature = new ol.Feature({geometry: BROWN, label: 'BROWN'});
+    var CHILDfeature = new ol.Feature({geometry: CHILD, label: 'CHILD'});
+    var CLAREDfeature = new ol.Feature({geometry: CLARED, label: 'CLARED'});
+    var CLAUDEfeature = new ol.Feature({geometry: CLAUDE, label: 'CLAUDE'});
+    var CLOVISfeature = new ol.Feature({geometry: CLOVIS, label: 'CLOVIS'});
+    var COCHRNfeature = new ol.Feature({geometry: COCHRN, label: 'COCHRN'});
+    var COLORAfeature = new ol.Feature({geometry: COLORA, label: 'COLORA'});
+    var CROSBYfeature = new ol.Feature({geometry: CROSBY, label: 'CROSBY'});
+    var DENVERfeature = new ol.Feature({geometry: DENVER, label: 'DENVER'});
+    var EAST10feature = new ol.Feature({geometry: EAST10, label: 'EAST10'});
+    var EAST15feature = new ol.Feature({geometry: EAST15, label: 'EAST15'});
+    var EAST5Kfeature = new ol.Feature({geometry: EAST5K, label: 'EAST5K'});
+    var ELKfeature = new ol.Feature({geometry: ELK, label: 'ELK'});
+    var FISHfeature = new ol.Feature({geometry: FISH, label: 'FISH'});
+    var FLOYDAfeature = new ol.Feature({geometry: FLOYDA, label: 'FLOYDA'});
+    var FORDfeature = new ol.Feature({geometry: FORD, label: 'FORD'});
+    var GAILfeature = new ol.Feature({geometry: GAIL, label: 'GAIL'});
+    var GAINESfeature = new ol.Feature({geometry: GAINES, label: 'GAINES'});
+    var GARZAfeature = new ol.Feature({geometry: GARZA, label: 'GARZA'});
+    var GUTHRIfeature = new ol.Feature({geometry: GUTHRI, label: 'GUTHRI'});
+    var HALEfeature = new ol.Feature({geometry: HALE, label: 'HALE'});
+    var HASKELfeature = new ol.Feature({geometry: HASKEL, label: 'HASKEL'});
+    var HOBBSfeature = new ol.Feature({geometry: HOBBS, label: 'HOBBS'});
+    var JAYTONfeature = new ol.Feature({geometry: JAYTON, label: 'JAYTON'});
+    var KERMITfeature = new ol.Feature({geometry: KERMIT, label: 'KERMIT'});
+    var KNOXfeature = new ol.Feature({geometry: KNOX, label: 'KNOX'});
+    var LAMESAfeature = new ol.Feature({geometry: LAMESA, label: 'LAMESA'});
+    var LEEfeature = new ol.Feature({geometry: LEE, label: 'LEE'});
+    var LENORAfeature = new ol.Feature({geometry: LENORA, label: 'LENORA'});
+    var LEVELfeature = new ol.Feature({geometry: LEVEL, label: 'LEVEL'});
+    var LITTLEfeature = new ol.Feature({geometry: LITTLE, label: 'LITTLE'});
+    var LUBBOKfeature = new ol.Feature({geometry: LUBBOK, label: 'LUBBOK'});
+    var MABEEfeature = new ol.Feature({geometry: MABEE, label: 'MABEE'});
+    var MIDLANfeature = new ol.Feature({geometry: MIDLAN, label: 'MIDLAN'});
+    var MULEfeature = new ol.Feature({geometry: MULE, label: 'MULE'});
+    var OZONAfeature = new ol.Feature({geometry: OZONA, label: 'OZONA'});
+    var PARMAfeature = new ol.Feature({geometry: PARMA, label: 'PARMA'});
+    var RANKINfeature = new ol.Feature({geometry: RANKIN, label: 'RANKIN'});
+    var ROARINfeature = new ol.Feature({geometry: ROARIN, label: 'ROARIN'});
+    var ROYfeature = new ol.Feature({geometry: ROY, label: 'ROY'});
+    var SEAGRVfeature = new ol.Feature({geometry: SEAGRV, label: 'SEAGRV'});
+    var SILVERfeature = new ol.Feature({geometry: SILVER, label: 'SILVER'});
+    var SLATONfeature = new ol.Feature({geometry: SLATON, label: 'SLATON'});
+    var STAMPSfeature = new ol.Feature({geometry: STAMPS, label: 'STAMPS'});
+    var STANfeature = new ol.Feature({geometry: STAN, label: 'STAN'});
+    var STONEfeature = new ol.Feature({geometry: STONE, label: 'STONE'});
+    var TBARfeature = new ol.Feature({geometry: TBAR, label: 'TBAR'});
+    var TIPTONfeature = new ol.Feature({geometry: TIPTON, label: 'TIPTON'});
+    var TOWNfeature = new ol.Feature({geometry: TOWN, label: 'TOWN'});
+    var TRAVISfeature = new ol.Feature({geometry: TRAVIS, label: 'TRAVIS'});
+    var WEST10feature = new ol.Feature({geometry: WEST10, label: 'WEST10'});
+    var WEST15feature = new ol.Feature({geometry: WEST15, label: 'WEST15'});
+    var WEST5Kfeature = new ol.Feature({geometry: WEST5K, label: 'WEST5K'});
+    var WINSTNfeature = new ol.Feature({geometry: WINSTN, label: 'WINSTN'});
+    var YOAKUMfeature = new ol.Feature({geometry: YOAKUM, label: 'YOAKUM'});
+    var _10Tfeature = new ol.Feature({geometry: _10T, label: '_10T'});
+    var _11Tfeature = new ol.Feature({geometry: _11T, label: '_11T'});
+    var _12Tfeature = new ol.Feature({geometry: _12T, label: '_12T'});
+    var _13Tfeature = new ol.Feature({geometry: _13T, label: '_13T'});
+    var _14Tfeature = new ol.Feature({geometry: _14T, label: '_14T'});
+    var _1Tfeature = new ol.Feature({geometry: _1T, label: '_1T'});
+    var _2100KMfeature = new ol.Feature({geometry: _2100KM, label: '_2100KM'});
+    var _251KMfeature = new ol.Feature({geometry: _251KM, label: '_251KM'});
+    var _252KMfeature = new ol.Feature({geometry: _252KM, label: '_252KM'});
+    var _25Tfeature = new ol.Feature({geometry: _25T, label: '_25T'});
+    var _27Tfeature = new ol.Feature({geometry: _27T, label: '_27T'});
+    var _28Tfeature = new ol.Feature({geometry: _28T, label: '_28T'});
+    var _2Tfeature = new ol.Feature({geometry: _2T, label: '_2T'});
+    var _31Tfeature = new ol.Feature({geometry: _31T, label: '_31T'});
+    var _32Tfeature = new ol.Feature({geometry: _32T, label: '_32T'});
+    var _39Tfeature = new ol.Feature({geometry: _39T, label: '_39T'});
+    var _3Tfeature = new ol.Feature({geometry: _3T, label: '_3T'});
+    var _40Tfeature = new ol.Feature({geometry: _40T, label: '_40T'});
+    var _48Tfeature = new ol.Feature({geometry: _48T, label: '_48T'});
+    var _4Tfeature = new ol.Feature({geometry: _4T, label: '_4T'});
+    var _50KMfeature = new ol.Feature({geometry: _50KM, label: '_50KM'});
+    var _51Tfeature = new ol.Feature({geometry: _51T, label: '_51T'});
+    var _53Tfeature = new ol.Feature({geometry: _53T, label: '_53T'});
+    var _56Tfeature = new ol.Feature({geometry: _56T, label: '_56T'});
+    var _59Tfeature = new ol.Feature({geometry: _59T, label: '_59T'});
+    var _5Tfeature = new ol.Feature({geometry: _5T, label: '_5T'});
+    var _6Tfeature = new ol.Feature({geometry: _6T, label: '_6T'});
+    var _7Tfeature = new ol.Feature({geometry: _7T, label: '_7T'});
+    var _8Tfeature = new ol.Feature({geometry: _8T, label: '_8T'});
+    var _9Tfeature = new ol.Feature({geometry: _9T, label: '_9T'});
+
+
+
+var vectorSource = new ol.source.Vector({ projection: 'EPSG:4326', features: [
+  BIGSPRfeature,
+  ACKERLfeature,
+  ANDYfeature,
+  AVENGEfeature,
+  BEGGSfeature,
+  BIGLKfeature,
+  BROWNfeature,
+  CHILDfeature,
+  CLAREDfeature,
+  CLAUDEfeature,
+  CLOVISfeature,
+  COCHRNfeature,
+  COLORAfeature,
+  CROSBYfeature,
+  DENVERfeature,
+  EAST10feature,
+  EAST15feature,
+  EAST5Kfeature,
+  ELKfeature,
+  FISHfeature,
+  FLOYDAfeature,
+  FORDfeature,
+  GAILfeature,
+  GAINESfeature,
+  GARZAfeature,
+  GUTHRIfeature,
+  HALEfeature,
+  HASKELfeature,
+  HOBBSfeature,
+  JAYTONfeature,
+  KERMITfeature,
+  KNOXfeature,
+  LAMESAfeature,
+  LEEfeature,
+  LENORAfeature,
+  LEVELfeature,
+  LITTLEfeature,
+  LUBBOKfeature,
+  MABEEfeature,
+  MIDLANfeature,
+  MULEfeature,
+  OZONAfeature,
+  PARMAfeature,
+  RANKINfeature,
+  ROARINfeature,
+  ROYfeature,
+  SEAGRVfeature,
+  SILVERfeature,
+  SLATONfeature,
+  STAMPSfeature,
+  STANfeature,
+  STONEfeature,
+  TBARfeature,
+  TIPTONfeature,
+  TOWNfeature,
+  TRAVISfeature,
+  WEST10feature,
+  WEST15feature,
+  WEST5Kfeature,
+  WINSTNfeature,
+  YOAKUMfeature,
+  _10Tfeature,
+  _11Tfeature,
+  _12Tfeature,
+  _13Tfeature,
+  _14Tfeature,
+  _1Tfeature,
+  _2100KMfeature,
+  _251KMfeature,
+  _252KMfeature,
+  _25Tfeature,
+  _27Tfeature,
+  _28Tfeature,
+  _2Tfeature,
+  _31Tfeature,
+  _32Tfeature,
+  _39Tfeature,
+  _3Tfeature,
+  _40Tfeature,
+  _48Tfeature,
+  _4Tfeature,
+  _50KMfeature,
+  _51Tfeature,
+  _53Tfeature,
+  _56Tfeature,
+  _59Tfeature,
+  _5Tfeature,
+  _6Tfeature,
+  _7Tfeature,
+  _8Tfeature,
+  _9Tfeature,
+
+
+]});
+var style = new ol.style.Style({
+     fill: new ol.style.Fill({
+color:                     'rgba(20, 100, 240, 0.3)'
+}),
+stroke: new ol.style.Stroke({
+width: 3,
+color:                     'rgba(0, 100, 240, 0.8)'
+     }),
+image: new ol.style.Circle({
+fill: new ol.style.Fill({
+color:                         'rgba(55, 200, 150, 0.5)'
+         }),
+stroke: new ol.style.Stroke({
+width: 10,
+color:                         'rgba(55, 200, 150, 0.8)'
+}),
+radius: 7
+}),
+text: new ol.style.Text({
+font:                   '22px Calibri,sans-serif',
+                  fill: new ol.style.Fill({
+color:                     '#2f2f2f'
+       }),
+stroke: new ol.style.Stroke({
+color:                     '#cccccc',
+width: 4
+}),
+                  offsetX: 14,
+offsetY: -14
+}),
+});
+var vectorLayer = new ol.layer.Vector({
+           source: vectorSource,
+                                  style: function(feature) {
+style.getText().setText(feature.get('label'));
+return [style];
+}
+});
+/* **********************************************
+// Points
+function pointStyleFunction(feature, resolution) {
+return new ol.style.Style({
+text: createTextStyle(feature, resolution, myDom.points)
+});
+}
+var vectorPoints = new ol.layer.Vector({
+source: vectorSource,
+style: new ol.style.Style({
+new ol.style.Text({
+text: feature.get('label'),
+placement: })
+        });
+});
+/* ********************************************** */
+var colors = {
+};
+var styleCache = {};
+var styleFunction = function(feature, resolution) {
+var color = colors[feature.get('PLT')];
+var styleArray = styleCache[color];
+if (!styleArray) {
+styleArray = [new ol.style.Style({
+stroke: new ol.style.Stroke({
+color: color,
+width: 3
+})
+})];
+styleCache[color] = styleArray;
+}
+return styleArray;
+};
+var vectorSource = new ol.source.Vector();
+var igcUrls = [
+//'Bart.igc',
+//'mick.igc',
+//'Jeff_Colombia.igc',
+//'data/igc/Tom-Payne.igc',
+//'data/igc/Ulrich-Prinz.igc'
+];
+function get(url, callback) {
+var client = new XMLHttpRequest();
+client.open('GET', url);
+client.onload = function() {
+callback(client.responseText);
+};
+client.send();
+}
+var igcFormat = new ol.format.IGC();
+for (var i = 0; i < igcUrls.length; ++i) {
+get(igcUrls[i], function(data) {
+var features = igcFormat.readFeatures(data,
+{featureProjection: 'EPSG:3857'});
+vectorSource.addFeatures(features);
+});
+}
+var time = {
+start: Infinity,
+stop: -Infinity,
+duration: 0
+};
+vectorSource.on('addfeature', function(event) {
+var geometry = event.feature.getGeometry();
+time.start = Math.min(time.start, geometry.getFirstCoordinate()[2]);
+time.stop = Math.max(time.stop, geometry.getLastCoordinate()[2]);
+time.duration = time.stop - time.start;
+});
+var quest = [-101.5249 , 32.2176]; // caution partner, read on...
+// since we are using OSM, we have to transform the coordinates...
+var questMercator = ol.proj.fromLonLat(quest);
+var map = new ol.Map({
+layers: [
+new ol.layer.Tile({
+source: new ol.source.OSM()
+}),
+new ol.layer.Vector({
+source: vectorSource,
+style:       styleFunction
+}),
+//vectorLineLayer,
+vectorLayer
+],
+target:   'map',
+controls: ol.control.defaults({
+attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+collapsible: false
+})
+}),
+view: new ol.View({
+center: questMercator,
+zoom: 12
+})
+});
+var point = null;
+var line = null;
+var displaySnap = function(coordinate) {
+var closestFeature = vectorSource.getClosestFeatureToCoordinate(coordinate);
+var info = document.getElementById('info');
+if (closestFeature === null) {
+point = null;
+line = null;
+info.innerHTML = '&nbsp;';
+} else {
+var geometry = closestFeature.getGeometry();
+var closestPoint = geometry.getClosestPoint(coordinate);
+if (point === null) {
+point = new ol.geom.Point(closestPoint);
+} else {
+point.setCoordinates(closestPoint);
+}
+var date = new Date(closestPoint[2] * 1000);
+ info.innerHTML =
+closestFeature.get('PLT') + ' (' + date.toUTCString() + ')';
+var coordinates = [coordinate, [closestPoint[0], closestPoint[1]]];
+if (line === null) {
+line = new ol.geom.LineString(coordinates);
+} else {
+line.setCoordinates(coordinates);
+}
+}
+map.render();
+};
+map.on('pointermove', function(evt) {
+if (evt.dragging) {
+return;
+}
+var coordinate = map.getEventCoordinate(evt.originalEvent);
+displaySnap(coordinate);
+});
+map.on('click', function(evt) {
+displaySnap(evt.coordinate);
+});
+var imageStyle = new ol.style.Circle({
+radius: 5,
+fill: null,
+stroke: new ol.style.Stroke({
+color:     'rgba(255,0,255,0.9)',
+width: 1
+})
+});
+var strokeStyle = new ol.style.Stroke({
+color:   'rgba(255,0,255,0.9)',
+width: 1
+});
+map.on('postcompose', function(evt) {
+var vectorContext = evt.vectorContext;
+if (point !== null) {
+vectorContext.setImageStyle(imageStyle);
+vectorContext.drawPointGeometry(point);
+}
+if (line !== null) {
+vectorContext.setFillStrokeStyle(null, strokeStyle);
+vectorContext.drawLineStringGeometry(line);
+}
+});
+var featureOverlay = new ol.layer.Vector({
+source: new ol.source.Vector(),
+map: map,
+style: new ol.style.Style({
+image: new ol.style.Circle({
+radius: 5,
+fill: new ol.style.Fill({
+color:         'rgba(255,0,0,0.9)'
+}),
+stroke: null
+})
+})
+});
+document.getElementById('time').addEventListener('input', function() {
+var value = parseInt(this.value, 10) / 100;
+var m = time.start + (time.duration * value);
+vectorSource.forEachFeature(function(feature) {
+var geometry = /** @type {ol.geom.LineString} */ (feature.getGeometry());
+var coordinate = geometry.getCoordinateAtM(m, true);
+var highlight = feature.get('highlight');
+if (highlight === undefined) {
+highlight = new ol.Feature(new ol.geom.Point(coordinate));
+feature.set('highlight', highlight);
+featureOverlay.getSource().addFeature(highlight);
+} else {
+highlight.getGeometry().setCoordinates(coordinate);
+}
+});
+map.render();
+});
+</script>
+</body>
+</html>

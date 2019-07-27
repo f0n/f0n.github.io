@@ -10,7 +10,7 @@ table {
   td {
     border: solid 1px #cccccc;
     vertical-align: center;
-    padding: 2%;
+    padding: 1%;
     width: 30%;
 
 }
@@ -26,4 +26,8 @@ table {
 .sponsor {
   width: 100%;
 
+}
+
+.task_title {
+  text-decoration: underline;
 }
