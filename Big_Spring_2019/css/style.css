@@ -31,3 +31,27 @@ table {
 .task_title {
   text-decoration: underline;
 }
+
+.task_image {
+  width: 30%;
+}
+
+.task_table {
+Font -family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+font-size: 12px;
+}
+.task_table td, .task_table th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+.task_table tr:nth-child(even){background-color: #f2f2f2;}
+.task_table tr:nth-child(odd){background-color: #ffffff;}
+.task_table tr:hover {background-color: #ddd;}
+.task_table th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #4CAF50;
+color: white;
+}
