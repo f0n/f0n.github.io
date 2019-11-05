@@ -15,3 +15,5 @@ Everything checked out on the glider, equipment, etc. It was time to go. Henry, 
 After release there wasn't much lift, so I just practiced turns, drawing a course on the ground, changing speeds, etc. Then, onto final and landing. Keeping speed up to ground effect, and a nice soft flare. I decided to jog the glider back to the launch line to both have some more exercise and to reminice of the learning days at the training hill. 
 
 This went on for three flights. Good consistent launches and landings... hopefully with some added XC miles next time. 
+
+![alt text](https:// f0n.github.io/images/20191103_02.png  "CUHG Hangar")
