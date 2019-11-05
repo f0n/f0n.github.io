@@ -8,7 +8,7 @@ I had not been able to fly since Big Spring (more than 2 months), and I could re
 
 I got to Wharton at ~1:00 PM and Efrain, Read, Henry and Carl were getting set up. Right away I started setting up, but took my time intentioally to ensure that the glider had not been damaged during transport. Big Spring can be a hard place for dust and the prikclies (Texas Burrs), plus car transport, and having the glider stored at home since then. 
 
-![alt text](https:// f0n.github.io/images/20191103_01.HEIC  "CUHG")
+![alt text](https:// f0n.github.io/images/20191103_01.png  "CUHG")
 
 Everything checked out on the glider, equipment, etc. It was time to go. Henry, Carl and Read were in the air already as my turn came. Tiki spent some time helping me adjust the hang loop. All systems go, and off we went on tow. This tow felt so good. I guess not so rowdy of an air, lower altitude, and the confidence gained allowed me to enjoy this tow so much more than ever before. 
 
